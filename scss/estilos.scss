@@ -105,6 +105,110 @@
         } 
     }
 }
+.trending {
+    background: $color-marfil;
+    width: 100%;
+    height: auto;
+    padding-bottom: 82px;
+    .text {
+      padding-top: 46px;
+      .title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        color: $color-morado;
+        text-align: center;
+        line-height: 30px;
+        margin-bottom: 7px;
+      }
+      .sub {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: $color-negro;
+        text-align: center;
+        line-height: 23px;
+        padding-bottom: 32px;
+      }
+    }
+    .gifos-car {
+      display: flex;
+      align-items: center;
+      
+        .content-car {
+            overflow: scroll;
+            scroll-behavior: smooth;
+            width: 100%;
+            .carousel {
+            display: flex;
+            flex-wrap: nowrap;
+                .gif {
+                    padding-left: 22px;
+                    .gifi-link {
+                        .gifi {
+                            width: 243px;
+                            height: 187px;
+                            background: chartreuse;
+                        }
+                    }
+                }
+            }
+        }
+        .arrows {
+            display: none;
+        }
+    }
+}
+.share {
+    width: 100%;
+    height: auto;
+    .text-footer {
+        padding-top: 47px;
+        padding-bottom: 23px;
+        .compartir {
+            .share-in {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: $color-negro;
+            letter-spacing: 0;
+            text-align: center;
+            }
+            .icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding-top: 22px;
+                padding-bottom: 46px;
+                .link {
+                    .icon {
+                        font-size: 20px;
+                        color: $color-gris;
+                        &:hover {
+                            color: $color-morado;
+                        }
+                    }
+                    .fa-twitter {
+                    padding-left: 20px;
+                    padding-right: 18px;
+                    }
+                }
+            }
+        }
+        .rights {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: $color-negro;
+            letter-spacing: 0;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+    .line-bottom {
+        width: 100%;
+        height: 5px;
+        background: $color-morado;
+    }
+}
 .darkmode{
     .line-purple {
         background: $color-negro;
@@ -164,6 +268,40 @@
                     background: $color-blanco;
                 }
             } 
+        }
+    }
+    .trending {
+        background: $color-gris-oscuro;
+        .title {
+            color: $color-blanco;
+        }
+        .sub {
+            color: $color-blanco;
+        }
+    }
+    .share {
+        .text-footer {
+            .compartir {
+                .share-in {
+                color: $color-blanco;
+                }
+                .icons {
+                    .link {
+                        .icon {
+                            color: $color-gris;
+                            &:hover {
+                                color: $color-blanco;
+                            }
+                        }
+                    }
+                }
+            }
+            .rights {
+                color: $color-blanco;
+            }
+        }
+        .line-bottom {
+          background: $color-negro;
         }
     }
 }
@@ -283,6 +421,93 @@
             }
         }
     }
+    .trending {
+        padding-bottom: 182px;
+        .text {
+            padding-top: 67px;
+            .title {
+                font-size: 25px;
+                margin-bottom: 12px;
+            }
+            .sub {
+                font-size: 18px;
+                padding-bottom: 53px;
+                br {
+                   display: none;
+                }
+            }
+        }
+        .gifos-car {
+            padding-left: 60px;
+            padding-right: 60px;
+            .content-car {
+                .carousel {
+                    .gif {
+                        padding-left: 0;
+                        padding-right: 27px;
+                        .gifi-link {
+                            .gifi {
+                                width: 357px;
+                                height: 275px;
+                            }
+                        }
+                        &:last-child {
+                            padding-right: 0;
+                          }
+                    }
+                }
+            }
+            .arrows {
+            display: block;
+            background: $color-marfil;
+            border: $color-marfil;
+            transition: .2s ease all;
+            outline: none;
+            padding: 0 22px;
+                .arrow-hover{
+                    display: none;
+                }
+                .noc{
+                    display: none;
+                }
+                &:hover{
+                    .arrow-hover{
+                        display: block;
+                    }
+                    .arrow{
+                        display: none;
+                    }
+                    .noc{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .share {
+        .text-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 50px 157px;
+            .compartir {
+                display: flex;
+                flex-direction: row;
+                .share-in {
+                font-size: 13px;
+                }
+                .icons {
+                padding: 0 0 0 17px;
+                }
+            }
+            .rights {
+                font-size: 13px;
+            }
+        }
+        .line-bottom {
+          height: 5.1px;
+        }
+    }
     .darkmode{
         .header {
             background: $color-fondo;
@@ -356,6 +581,37 @@
                         }
                     }
                 }
+            }
+        }
+        .trending {
+            .gifos-car {
+                .arrows {
+                    background: $color-gris-oscuro;
+                    border: $color-gris-oscuro;
+                        .noc{
+                            display: block;
+                        }
+                        .arrow-hover{
+                            display: none;
+                        }
+                        .diu{
+                            display: none;
+                        }
+                        &:hover{
+                            .arrow-hover{
+                                display: block;
+                            }
+                            .arrow{
+                                display: none;
+                            }
+                            .diu{
+                                display: none;
+                            }
+                            .noc{
+                                background: $color-blanco;
+                            }
+                        }
+                    }
             }
         }
     }

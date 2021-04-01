@@ -103,6 +103,105 @@ body {
   display: none;
 }
 
+.trending {
+  background: #F3F5F8;
+  width: 100%;
+  height: auto;
+  padding-bottom: 82px;
+}
+.trending .text {
+  padding-top: 46px;
+}
+.trending .text .title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 7px;
+}
+.trending .text .sub {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  line-height: 23px;
+  padding-bottom: 32px;
+}
+.trending .gifos-car {
+  display: flex;
+  align-items: center;
+}
+.trending .gifos-car .content-car {
+  overflow: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+.trending .gifos-car .content-car .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.trending .gifos-car .content-car .carousel .gif {
+  padding-left: 22px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
+  width: 243px;
+  height: 187px;
+  background: chartreuse;
+}
+.trending .gifos-car .arrows {
+  display: none;
+}
+
+.share {
+  width: 100%;
+  height: auto;
+}
+.share .text-footer {
+  padding-top: 47px;
+  padding-bottom: 23px;
+}
+.share .text-footer .compartir .share-in {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 0;
+  text-align: center;
+}
+.share .text-footer .compartir .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 22px;
+  padding-bottom: 46px;
+}
+.share .text-footer .compartir .icons .link .icon {
+  font-size: 20px;
+  color: #CDD6E0;
+}
+.share .text-footer .compartir .icons .link .icon:hover {
+  color: #572EE5;
+}
+.share .text-footer .compartir .icons .link .fa-twitter {
+  padding-left: 20px;
+  padding-right: 18px;
+}
+.share .text-footer .rights {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: black;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
+}
+.share .line-bottom {
+  width: 100%;
+  height: 5px;
+  background: #572EE5;
+}
+
 .darkmode .line-purple {
   background: black;
 }
@@ -144,6 +243,30 @@ body {
 }
 .darkmode .header .menu-container .menu .line {
   background: white;
+}
+.darkmode .trending {
+  background: #222326;
+}
+.darkmode .trending .title {
+  color: white;
+}
+.darkmode .trending .sub {
+  color: white;
+}
+.darkmode .share .text-footer .compartir .share-in {
+  color: white;
+}
+.darkmode .share .text-footer .compartir .icons .link .icon {
+  color: #CDD6E0;
+}
+.darkmode .share .text-footer .compartir .icons .link .icon:hover {
+  color: white;
+}
+.darkmode .share .text-footer .rights {
+  color: white;
+}
+.darkmode .share .line-bottom {
+  background: black;
 }
 
 @media (min-width: 1440px) {
@@ -248,6 +371,85 @@ body {
     display: none;
   }
 
+  .trending {
+    padding-bottom: 182px;
+  }
+  .trending .text {
+    padding-top: 67px;
+  }
+  .trending .text .title {
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+  .trending .text .sub {
+    font-size: 18px;
+    padding-bottom: 53px;
+  }
+  .trending .text .sub br {
+    display: none;
+  }
+  .trending .gifos-car {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .trending .gifos-car .content-car .carousel .gif {
+    padding-left: 0;
+    padding-right: 27px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
+    width: 357px;
+    height: 275px;
+  }
+  .trending .gifos-car .content-car .carousel .gif:last-child {
+    padding-right: 0;
+  }
+  .trending .gifos-car .arrows {
+    display: block;
+    background: #F3F5F8;
+    border: #F3F5F8;
+    transition: 0.2s ease all;
+    outline: none;
+    padding: 0 22px;
+  }
+  .trending .gifos-car .arrows .arrow-hover {
+    display: none;
+  }
+  .trending .gifos-car .arrows .noc {
+    display: none;
+  }
+  .trending .gifos-car .arrows:hover .arrow-hover {
+    display: block;
+  }
+  .trending .gifos-car .arrows:hover .arrow {
+    display: none;
+  }
+  .trending .gifos-car .arrows:hover .noc {
+    display: none;
+  }
+
+  .share .text-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 157px;
+  }
+  .share .text-footer .compartir {
+    display: flex;
+    flex-direction: row;
+  }
+  .share .text-footer .compartir .share-in {
+    font-size: 13px;
+  }
+  .share .text-footer .compartir .icons {
+    padding: 0 0 0 17px;
+  }
+  .share .text-footer .rights {
+    font-size: 13px;
+  }
+  .share .line-bottom {
+    height: 5.1px;
+  }
+
   .darkmode .header {
     background: #37383C;
   }
@@ -301,6 +503,31 @@ body {
   }
   .darkmode .header .menu-container .menu .more:hover .diu {
     display: none;
+  }
+  .darkmode .trending .gifos-car .arrows {
+    background: #222326;
+    border: #222326;
+  }
+  .darkmode .trending .gifos-car .arrows .noc {
+    display: block;
+  }
+  .darkmode .trending .gifos-car .arrows .arrow-hover {
+    display: none;
+  }
+  .darkmode .trending .gifos-car .arrows .diu {
+    display: none;
+  }
+  .darkmode .trending .gifos-car .arrows:hover .arrow-hover {
+    display: block;
+  }
+  .darkmode .trending .gifos-car .arrows:hover .arrow {
+    display: none;
+  }
+  .darkmode .trending .gifos-car .arrows:hover .diu {
+    display: none;
+  }
+  .darkmode .trending .gifos-car .arrows:hover .noc {
+    background: white;
   }
 }
 .banner {
