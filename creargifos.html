@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo-desktop.svg">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Crear gifos</title>
+</head>
+<body id="body">
+    <div class="line-purple"></div>
+    <header class="header">
+        <a href="./index.html" class="logo">
+            <img class="logo-mobile diu" src="./assets/logo-mobile.svg" alt="logo">
+            <img class="logo-desktop diu" src="./assets/logo-desktop.svg" alt="logo">
+            <img class="logo-mobile noc" src="./assets/logo-mobile-modo-noct.svg" alt="logo">
+            <img class="logo-desktop noc" src="./assets/Logo-modo-noc.svg" alt="logo">
+        </a>
+        <div class="search" id="searchHeader">
+            <input type="text" class="inp-search" id="inp-search-header" placeholder="Busca GIFOS y más">
+            <button class="butt-search diu"><img class="img-search" src="./assets/icon-search.svg" alt="search"></button>
+            <button class="butt-search noc"><img class="img-search" src="./assets/icon-search-mod-noc.svg" alt="search"></button>
+        </div>
+        <div class="menu-container">
+            <input type="checkbox" class="menu-check" id="menu-check">
+            <label for="menu-check">
+                <span class="icon-menu">
+                    <img class="diu" src="./assets/burger.svg" alt="menu">
+                    <img class="noc" src="./assets/burger-modo-noct.svg" alt="menu">
+                </span>
+                <span class="closed">
+                    <img class="diu" src="./assets/close.svg" alt="">
+                    <img class="noc" src="./assets/close-modo-noct.svg" alt="">
+                </span>
+            </label>
+           <div class="menu">
+            <a class="con-item diu" href="#" id="darkmode">Modo Nocturno</a>
+            <a class="con-item noc" href="#" id="mododiurno">Modo Diurno</a>
+            <div class="line"></div>
+            <a class="con-item" href="./favoritos.html">Favoritos</a>
+            <div class="line"></div>
+            <a class="con-item" href="./misgifos.html">Mis GIFOS</a>
+                <div class="more"> 
+                  <img class="create" src="./assets/CTA-crear-gifo-active.svg" alt="create">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="creargifos"> 
+      <div class="camara">
+        <div class="grabadora">
+          <img class="diu" src="./assets/camara.svg" alt="">
+          <img class="noc" src="./assets/camara-modo-noc.svg" alt="">
+        </div>
+        <div class="luz">
+          <img class="alta" src="./assets/Path 2.svg" alt="">
+        </div>
+      </div>
+      <div class="proceso">
+        <div class="cuadro">
+          <div class="top">
+            <div class="borde left"></div>
+            <div class="borde right"></div>
+          </div>
+          <div class="text">
+            <p class="title">Aquí podrás <br> crear tus propios <span class="gifos">GIFOS</span></p>
+            <p class="parrafo">¡Crea tu GIFO en sólo 3 pasos! <br> (Sólo necesitas una cámara para grabar un video)</p>
+          </div>
+          <div class="bottom">
+            <div class="borde left"></div>
+            <div class="borde right"></div>
+          </div>
+        </div>
+        <div class="pasos">
+          <div class="paso one">1</div>
+          <div class="paso two">2</div>
+          <div class="paso three">3</div>
+        </div>
+      </div>
+      <div class="pelicula">
+        <img class="diu" src="./assets/pelicula.svg" alt="">
+        <img class="noc" src="./assets/pelicula-modo-noc.svg" alt="">
+      </div>
+      <div class="line"></div>
+      <div class="button">COMENZAR</div>
+    </section>
+    <script src="./script/modonocturno.js"></script>
+</body>
+</html>
