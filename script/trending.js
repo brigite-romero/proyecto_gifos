@@ -13,3 +13,8 @@ flechaDerecha.addEventListener('click', () => {
 flechaIzquierda.addEventListener('click', () => {
   fila.scrollLeft -= fila.offsetWidth;
 });
+
+// gifs de giphy
+
+const apiKey = 'n8KtgV7bEMIp74WJ2vJjRcoZXAvQiPX5';
+const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=15`;
