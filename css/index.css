@@ -149,7 +149,6 @@ body {
 .trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
   width: 243px;
   height: 187px;
-  background: chartreuse;
 }
 .trending .gifos-car .arrows {
   display: none;
@@ -534,7 +533,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 7px 20px 45px 20px;
+  padding: 7px 0 45px 0;
 }
 .banner .title {
   font-family: "Montserrat", sans-serif;
@@ -543,13 +542,13 @@ body {
   color: #572EE5;
   text-align: center;
   line-height: 33px;
-  padding: 0 10px 0 10px;
+  padding: 0 30px 0 30px;
 }
 .banner .title .gifos {
-  color: aquamarine;
+  color: #50E3C2;
 }
 .banner .img-banner-cont {
-  padding: 31px 31px 0 31px;
+  padding: 31px 51px 0 51px;
 }
 .banner .img-banner-cont .img-banner {
   width: 100%;
@@ -561,7 +560,7 @@ body {
   display: flex;
   margin: -5px 0 0 0;
   height: 50px;
-  width: 100%;
+  width: 90%;
   align-items: center;
   justify-content: space-between;
   max-width: 450px;
@@ -587,7 +586,7 @@ body {
   padding: 0 20px 0 0;
   outline: none;
 }
-.banner .search .noc {
+.banner .search .butt-search .noc {
   display: none;
 }
 .banner .text-banner .title-trending {
@@ -606,14 +605,99 @@ body {
   color: #572EE5;
   text-align: center;
   line-height: 25px;
-  margin: 2px 50px 0 50px;
+  margin: 2px 50px 40px 50px;
+}
+.banner .resultados {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: none;
+}
+.banner .resultados .titulo-res {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.banner .resultados .titulo-res .line {
+  width: 157px;
+  height: 1px;
+  margin-bottom: 35px;
+  background: #9CAFC3;
+}
+.banner .resultados .titulo-res .titulo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 40px;
+  margin: 7px 0 46px 0;
+}
+.banner .resultados .noResultados {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 21px;
+  display: none;
+}
+.banner .resultados .noResultados .text-resultados {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #50E3C2;
+  text-align: center;
+  line-height: 33px;
+  margin: 10px 0 0 0;
+}
+.banner .resultados .cont-result {
+  text-align: center;
+  padding: 0 0 0 20px;
+}
+.banner .resultados .cont-result .resultadosObtenidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif {
+  width: 156px;
+  height: 120px;
+  margin: 0 15px 15px 0;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .img-gif {
+  width: 100%;
+  height: 100%;
+}
+.banner .resultados .ver-mas {
+  background: white;
+  border: white;
+  transition: 0.2s ease all;
+  outline: none;
+  padding: 57px 0 0 0;
+}
+.banner .resultados .ver-mas .noc {
+  display: none;
+}
+.banner .resultados .ver-mas .hover {
+  display: none;
+}
+.banner .resultados .ver-mas:hover .hover {
+  display: block;
+}
+.banner .resultados .ver-mas:hover .pre {
+  display: none;
+}
+.banner .resultados .ver-mas:hover .noc {
+  display: none;
 }
 
 .darkmode .banner .title {
   color: white;
 }
 .darkmode .banner .title .gifos {
-  color: aquamarine;
+  color: #50E3C2;
 }
 .darkmode .banner .search {
   border: 1px solid white;
@@ -627,10 +711,10 @@ body {
   background: #37383C;
   border: #37383C;
 }
-.darkmode .banner .search .noc {
+.darkmode .banner .search .butt-search .noc {
   display: block;
 }
-.darkmode .banner .search .diu {
+.darkmode .banner .search .butt-search .diu {
   display: none;
 }
 .darkmode .banner .text-banner .title-trending {
@@ -638,6 +722,34 @@ body {
 }
 .darkmode .banner .text-banner .text-trending {
   color: white;
+}
+.darkmode .banner .resultados .titulo-res .titulo {
+  color: white;
+}
+.darkmode .banner .resultados .noResultados .text-resultados {
+  color: #50E3C2;
+}
+.darkmode .banner .resultados .ver-mas {
+  background: #37383C;
+  border: #37383C;
+}
+.darkmode .banner .resultados .ver-mas .noc {
+  display: block;
+}
+.darkmode .banner .resultados .ver-mas .diu {
+  display: none;
+}
+.darkmode .banner .resultados .ver-mas .hover {
+  display: none;
+}
+.darkmode .banner .resultados .ver-mas:hover .hover {
+  display: block;
+}
+.darkmode .banner .resultados .ver-mas:hover .pre {
+  display: none;
+}
+.darkmode .banner .resultados .ver-mas:hover .diu {
+  display: none;
 }
 
 @media (min-width: 1440px) {
@@ -668,6 +780,32 @@ body {
   .banner .text-banner .text-trending {
     font-size: 16px;
     margin: 0;
+  }
+  .banner .resultados {
+    padding: 106px 0 95px 0;
+  }
+  .banner .resultados .titulo-res .titulo {
+    font-size: 25px;
+    margin: 8px 0 36px 0;
+  }
+  .banner .resultados .noResultados {
+    max-width: 431px;
+    padding: 74px 0 0 0;
+  }
+  .banner .resultados .noResultados .text-resultados {
+    font-size: 22px;
+    margin: 24px 0 0 0;
+  }
+  .banner .resultados .cont-result {
+    padding: 0 0 0 0;
+  }
+  .banner .resultados .cont-result .resultadosObtenidos {
+    padding: 0 122px 0 157px;
+  }
+  .banner .resultados .cont-result .resultadosObtenidos .gif {
+    width: 260px;
+    height: 200px;
+    margin: 0 30px 35px 0;
   }
 }
 .favoritos {
@@ -704,7 +842,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 17px;
-  color: aquamarine;
+  color: #50E3C2;
   text-align: center;
   line-height: 33px;
   margin: 10px 0 0 0;
@@ -716,7 +854,7 @@ body {
   justify-content: space-between;
 }
 .favoritos .favoritosGuardados .gif {
-  background: aquamarine;
+  background: #50E3C2;
   width: 156px;
   height: 120px;
   margin-bottom: 21px;
@@ -748,10 +886,10 @@ body {
   color: white;
 }
 .darkmode .favoritos .noFavoritos .text-favoritos {
-  color: aquamarine;
+  color: #50E3C2;
 }
 .darkmode .favoritos .favoritosGuardados .gif {
-  background: aquamarine;
+  background: #50E3C2;
 }
 .darkmode .favoritos .ver-mas {
   background: #37383C;
@@ -835,7 +973,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 17px;
-  color: aquamarine;
+  color: #50E3C2;
   text-align: center;
   line-height: 33px;
   margin: 10px 0 0 0;
@@ -847,7 +985,7 @@ body {
   justify-content: space-between;
 }
 .misGifos .gifosGuardados .gif {
-  background: aquamarine;
+  background: #50E3C2;
   width: 156px;
   height: 120px;
   margin-bottom: 21px;
@@ -879,10 +1017,10 @@ body {
   color: white;
 }
 .darkmode .misGifos .noGifos .text-mg {
-  color: aquamarine;
+  color: #50E3C2;
 }
 .darkmode .misGifos .gifosGuardados .gif {
-  background: aquamarine;
+  background: #50E3C2;
 }
 .darkmode .misGifos .ver-mas {
   background: #37383C;
@@ -979,12 +1117,12 @@ body {
   height: 25px;
 }
 .creargifos .proceso .cuadro .top .left {
-  border-top: 2px solid aquamarine;
-  border-left: 2px solid aquamarine;
+  border-top: 2px solid #50E3C2;
+  border-left: 2px solid #50E3C2;
 }
 .creargifos .proceso .cuadro .top .right {
-  border-top: 2px solid aquamarine;
-  border-right: 2px solid aquamarine;
+  border-top: 2px solid #50E3C2;
+  border-right: 2px solid #50E3C2;
 }
 .creargifos .proceso .cuadro .text {
   margin: auto;
@@ -998,7 +1136,7 @@ body {
   line-height: 35px;
 }
 .creargifos .proceso .cuadro .text .title .gifos {
-  color: aquamarine;
+  color: #50E3C2;
 }
 .creargifos .proceso .cuadro .text .parrafo {
   font-family: "Roboto", sans-serif;
@@ -1020,12 +1158,12 @@ body {
   height: 25px;
 }
 .creargifos .proceso .cuadro .bottom .left {
-  border-bottom: 2px solid aquamarine;
-  border-left: 2px solid aquamarine;
+  border-bottom: 2px solid #50E3C2;
+  border-left: 2px solid #50E3C2;
 }
 .creargifos .proceso .cuadro .bottom .right {
-  border-bottom: 2px solid aquamarine;
-  border-right: 2px solid aquamarine;
+  border-bottom: 2px solid #50E3C2;
+  border-right: 2px solid #50E3C2;
 }
 .creargifos .proceso .pasos {
   display: flex;

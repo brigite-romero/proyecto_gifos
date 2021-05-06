@@ -21,8 +21,10 @@
         </a>
         <div class="search" id="searchHeader">
             <input type="text" class="inp-search" id="inp-search-header" placeholder="Busca GIFOS y más">
-            <button class="butt-search diu"><img class="img-search" src="./assets/icon-search.svg" alt="search"></button>
-            <button class="butt-search noc"><img class="img-search" src="./assets/icon-search-mod-noc.svg" alt="search"></button>
+            <div class="butt-search" id="search-header">
+                <img class="diu" src="./assets/icon-search.svg" alt="search">
+                <img class="noc" src="./assets/icon-search-mod-noc.svg" alt="search">
+            </div>
         </div>
         <div class="menu-container">
             <input type="checkbox" class="menu-check" id="menu-check">
@@ -54,21 +56,44 @@
     </header>
 
     <section class="banner" id="banner">
-        <div class="title">
+        <div class="title" id="title">
             Inspírate, busca, guarda, y crea los mejores <span class="gifos">GIFOS</span>
         </div>  
-        <div class="img-banner-cont">
+        <div class="img-banner-cont" id="cont-img">
             <img class="img-banner" src="./assets/ilustra_header.svg" alt="">
         </div>
         <div class="search">
             <input type="text" class="inp-search" id="inp-search" placeholder="Busca GIFOS y más">
-            <button class="butt-search diu"><img class="img-search" src="./assets/icon-search.svg" alt="search"></button>
-            <button class="butt-search noc"><img class="img-search" src="./assets/icon-search-mod-noc.svg" alt="search"></button>
+            <div class="butt-search" id="search">
+              <img class="diu" src="./assets/icon-search.svg" alt="search">
+              <img class="noc" src="./assets/icon-search-mod-noc.svg" alt="search">
+            </div>
         </div>
         <div class="text-banner">
             <p class="title-trending">Trending:</p>
             <p class="text-trending">Reactions, Entertainment, Sports, Stickers, Artists</p>
         </div>
+        <section class="resultados" id="resultados">
+          <div class="titulo-res" id="titulo">
+              <div class="line"></div>
+              <p class="titulo">Lorem Ipsum</p>
+          </div>
+          <div class="noResultados" id="noResultados">
+              <img src="./assets/icon-busqueda-sin-resultado.svg" alt="sin favoritos">
+              <p class="text-resultados">Intenta con otra búsqueda.</p>
+          </div>
+          <div class="cont-result" id="div-resultados">
+              <div class="resultadosObtenidos" id="contResul">
+
+              </div>
+          </div>
+          <button role="button" id="ver-mas" class="ver-mas">
+            <img class="vermas-img pre diu" src="./assets/CTA-ver-mas.svg" alt="ver-mas">
+            <img class="vermas-img hover diu" src="./assets/CTA-ver-mas-hover.svg" alt="ver-mas">
+            <img class="vermas-img pre noc" src="./assets/CTA-ver+-modo-noc.svg" alt="ver-mas">
+            <img class="vermas-img hover noc" src="./assets/CTA-ver+hover-modo-noc.svg" alt="ver-mas">
+          </button>
+        </section>
     </section>
 
     <section class="trending">
@@ -116,8 +141,8 @@
         </div>
         <div class="line-bottom"></div>
       </footer>
-      
-    <script src="./script/index.js"></script>
+    
+    <script src="./script/search.js"></script>
     <script src="./script/trending.js"></script>
     <script src="./script/modonocturno.js"></script>
 </body>
