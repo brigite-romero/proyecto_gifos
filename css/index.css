@@ -554,18 +554,27 @@ body {
   width: 100%;
   height: 100%;
 }
-.banner .search {
+.banner .div-search {
   border: 1px solid #572EE5;
   border-radius: 30px;
-  display: flex;
   margin: -5px 0 0 0;
-  height: 50px;
   width: 90%;
-  align-items: center;
-  justify-content: space-between;
   max-width: 450px;
 }
-.banner .search .inp-search {
+.banner .div-search .search {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner .div-search .search .img-search-active {
+  display: none;
+}
+.banner .div-search .search .img-search-active .img {
+  padding: 0 0 0 21px;
+}
+.banner .div-search .search .inp-search {
   background: white;
   border: white;
   border-radius: 30px;
@@ -579,15 +588,50 @@ body {
   padding: 0 0 0 50px;
   outline: none;
 }
-.banner .search .butt-search {
+.banner .div-search .search .butt-search {
   background: white;
   border: white;
   border-radius: 30px;
   padding: 0 20px 0 0;
   outline: none;
 }
-.banner .search .butt-search .noc {
+.banner .div-search .search .butt-search .noc {
   display: none;
+}
+.banner .div-search .search .close-search {
+  display: none;
+  background: white;
+  border: white;
+  border-radius: 30px;
+  padding: 0 20px 0 0;
+  outline: none;
+}
+.banner .div-search .search .close-search .noc {
+  display: none;
+}
+.banner .div-search .line {
+  width: 90%;
+  height: 1px;
+  background: #9CAFC3;
+  margin: auto;
+  display: none;
+}
+.banner .div-search .sugerencias {
+  display: none;
+}
+.banner .div-search .sugerencias .sugerencia {
+  display: flex;
+  cursor: pointer;
+}
+.banner .div-search .sugerencias .sugerencia .img {
+  padding: 0 0 0 23px;
+}
+.banner .div-search .sugerencias .sugerencia .text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #9CAFC3;
+  padding: 0 0 0 14px;
 }
 .banner .text-banner .title-trending {
   font-family: "Montserrat", sans-serif;
@@ -699,22 +743,32 @@ body {
 .darkmode .banner .title .gifos {
   color: #50E3C2;
 }
-.darkmode .banner .search {
+.darkmode .banner .div-search {
   border: 1px solid white;
 }
-.darkmode .banner .search .inp-search {
+.darkmode .banner .div-search .search .inp-search {
   background: #37383C;
   border: #37383C;
   color: #9CAFC3;
 }
-.darkmode .banner .search .butt-search {
+.darkmode .banner .div-search .search .butt-search {
   background: #37383C;
   border: #37383C;
 }
-.darkmode .banner .search .butt-search .noc {
+.darkmode .banner .div-search .search .butt-search .noc {
   display: block;
 }
-.darkmode .banner .search .butt-search .diu {
+.darkmode .banner .div-search .search .butt-search .diu {
+  display: none;
+}
+.darkmode .banner .div-search .search .close-search {
+  background: #37383C;
+  border: #37383C;
+}
+.darkmode .banner .div-search .search .close-search .noc {
+  display: block;
+}
+.darkmode .banner .div-search .search .close-search .diu {
   display: none;
 }
 .darkmode .banner .text-banner .title-trending {
@@ -765,10 +819,10 @@ body {
   .banner .img-banner-cont {
     padding: 24px 0 0 0;
   }
-  .banner .search {
+  .banner .div-search {
     width: 551px;
   }
-  .banner .search .inp-search {
+  .banner .div-search .search .inp-search {
     text-align: left;
     width: 80%;
     padding: 0 0 0 54px;

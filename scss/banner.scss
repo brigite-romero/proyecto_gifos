@@ -24,41 +24,85 @@
             height: 100%;
         }
     }
-
-    .search{
+    .div-search{
         border: 1px solid $color-morado;
         border-radius: 30px;
-        display: flex;
         margin: -5px 0 0 0;
-        height: 50px;
         width: 90%;
-        align-items: center;
-        justify-content: space-between;
         max-width: 450px;
+        .search{
+            display: flex;
+            height: 50px;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
 
-        .inp-search{
-            background: $color-blanco;
-            border: $color-blanco;
-            border-radius: 30px;
-            height: 22px;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            color: $color-negro;
-            text-align: left;
-            width: 70%;
-            padding: 0 0 0 50px;
-            outline: none;
-        }
-        .butt-search{
-            background: $color-blanco;
-            border: $color-blanco;
-            border-radius: 30px;
-            padding: 0 20px 0 0;
-            outline: none;
-            .noc{
+            .img-search-active{
+                 display: none;
+                .img{
+                    padding: 0 0 0 21px;
+                }
+            }
+    
+            .inp-search{
+                background: $color-blanco;
+                border: $color-blanco;
+                border-radius: 30px;
+                height: 22px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                color: $color-negro;
+                text-align: left;
+                width: 70%;
+                padding: 0 0 0 50px;
+                outline: none;
+            }
+            .butt-search{
+                background: $color-blanco;
+                border: $color-blanco;
+                border-radius: 30px;
+                padding: 0 20px 0 0;
+                outline: none;
+                .noc{
+                    display: none;
+                } 
+            }
+            .close-search{
                 display: none;
-            } 
+                background: $color-blanco;
+                border: $color-blanco;
+                border-radius: 30px;
+                padding: 0 20px 0 0;
+                outline: none;
+                .noc{
+                    display: none;
+                }
+            }
+        }
+        .line{
+            width: 90%;
+            height: 1px;
+            background: #9CAFC3;
+            margin: auto;
+            display: none;
+        }
+        .sugerencias{
+            display: none;
+            .sugerencia{
+                display: flex;
+                cursor: pointer;
+                .img{
+                    padding: 0 0 0 23px;
+                }
+                .text{
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #9CAFC3;
+                    padding: 0 0 0 14px;
+                } 
+            }
         }
     }
 
@@ -188,22 +232,34 @@
             }
         }
 
-        .search{
+        .div-search{
             border: 1px solid $color-blanco;
-            .inp-search{
-                background: $color-fondo;
-                border: $color-fondo;
-                color: $color-seccion;
-            }
-            .butt-search{
-                background: $color-fondo;
-                border: $color-fondo;
-                .noc{
-                    display: block;
+            .search{
+                .inp-search{
+                    background: $color-fondo;
+                    border: $color-fondo;
+                    color: $color-seccion;
                 }
-                .diu{
-                    display: none;
-                } 
+                .butt-search{
+                    background: $color-fondo;
+                    border: $color-fondo;
+                    .noc{
+                        display: block;
+                    }
+                    .diu{
+                        display: none;
+                    } 
+                }
+                .close-search{
+                    background: $color-fondo;
+                    border: $color-fondo;
+                    .noc{
+                        display: block;
+                    }
+                    .diu{
+                        display: none;
+                    }
+                }
             }
         }
 
@@ -271,16 +327,18 @@
         .img-banner-cont{
             padding: 24px 0 0 0;
         }
-    
-        .search{
+
+        .div-search{
             width: 551px;
-    
-            .inp-search{
-                text-align: left;
-                width: 80%;
-                padding: 0 0 0 54px;
+            .search{
+                .inp-search{
+                    text-align: left;
+                    width: 80%;
+                    padding: 0 0 0 54px;
+                }
             }
         }
+        
     
         .text-banner{
             .title-trending{
