@@ -1,6 +1,7 @@
 //variables
 
-const url = 'https://api.giphy.com/v1/gifs/search';
+const urlresultados = 'https://api.giphy.com/v1/gifs/search';
+const urlsugerencias = 'https://api.giphy.com/v1/gifs/search/tags';
 let api_key = 'GWh43EKcmjngwSbGuEUebGNcgiQmDelI';
 let word = document.getElementById('inp-search');
 let wordTwo = document.getElementById('inp-search-header');
@@ -13,10 +14,14 @@ let resultados = document.getElementById('resultados');
 let noResultados = document.getElementById('noResultados');
 let vermas = document.getElementById('ver-mas');
 let element =  document.getElementById('contResul');
+let elementSug = document.getElementById('sugerencias');
 let contResultados = document.getElementById('div-resultados');
-let maxLimit = 48;
+let contSugerencias = document.getElementById('div-sugerencias');
 let gif = document.getElementsByClassName('gif');
-const buscar = document.getElementById('searchHeader')
+const buscar = document.getElementById('searchHeader');
+let imgSugerencias = document.getElementById('img-search-active');
+let closeSugerencias = document.getElementById('close-search');
+let lineSugerencias = document.getElementById('line');
 
 //Search header
 
@@ -29,11 +34,75 @@ function activarBuscador() {
 }
 window.addEventListener('scroll', activarBuscador);
 
+//sugerencia de busquedas
+
+async function sugerencias(){
+    let wordBanner = word.value;
+    let wordHeader = wordTwo.value;
+    contSugerencias.removeChild(elementSug);
+    elementSug = document.createElement("div");
+    elementSug.className = "sugerencias";
+    element.id = "sugerencias"
+    contSugerencias.appendChild(elementSug);
+    await fetch(`${urlsugerencias}?q=${wordBanner || wordHeader }&api_key=${api_key}&limit=5`)
+    .then(response => response.json())
+    .then(data => {
+        for (i = 0; i < 4; i++){
+            let resultados = data.data[i].name;
+            let sugerencia = document.createElement("div");
+            sugerencia.id = `sugerencia`;
+            sugerencia.className = "sugerencia";
+            elementSug.appendChild(sugerencia);
+            sugerencia.innerHTML = `<img class="img" src="./assets/icon-search-gray.svg" alt="search">
+                                    <p class="text" id="resultadoSugerencia${i}">${resultados}</p>`;
+            okBanner.style.display = "none";
+            imgSugerencias.style.display = "block";
+            word.style.padding = "0 0 0 13px";
+            closeSugerencias.style.display = "block";
+            lineSugerencias.style.display = "block";
+            elementSug.style.display = "block";
+        }
+    });
+}  
+
+word.addEventListener('keyup', sugerencias);
+
+//buscar sugerencia
+let wordthree = '';
+document.onclick = captura_click;
+	
+function captura_click(e) {
+	let idElement = e.target.id;
+    let classElement = e.target.className;
+    if (classElement === "text"){
+        let mostrar = document.getElementById(`${idElement}`)
+        wordthree = mostrar.innerHTML;
+        console.log(wordthree)
+        word = '';
+        traer();
+    }
+}
+
+//Cerrar sugerencias
+
+function close(){
+    word = document.getElementById('inp-search');
+    okBanner.style.display = "block";
+    imgSugerencias.style.display = "none";
+    word.style.padding = "0 0 0 50px";
+    closeSugerencias.style.display = "none";
+    lineSugerencias.style.display = "none";
+    elementSug.style.display = "none"
+}
+
+closeSugerencias.addEventListener('click', close);
+
 //resultados de busqueda
 
 async function traer(){
     let wordBanner = word.value;
     let wordHeader = wordTwo.value;
+    let wordSugerencia = wordthree;
     contResultados.removeChild(element);
     element = document.createElement("div");
     element.className = "resultadosObtenidos";
@@ -42,7 +111,7 @@ async function traer(){
     banner.style.display = "none";
     title.style.display = "none";
     resultados.style.display = "flex";
-    await fetch(`${url}?q=${wordBanner || wordHeader }&api_key=${api_key}&limit=${maxLimit}`)
+    await fetch(`${urlresultados}?q=${wordBanner || wordHeader || wordSugerencia}&api_key=${api_key}&limit=48`)
     .then(response => response.json())
     .then(data => {
         if(data.data == ''){
@@ -61,7 +130,7 @@ async function traer(){
                 noResultados.style.display = "none";
                 vermas.style.display = "flex";
                 titulo.innerHTML = `<div class="line"></div>
-                <p class="titulo">${wordBanner || wordHeader}</p>`
+                <p class="titulo">${wordBanner || wordHeader || wordSugerencia}</p>`
             }
         }
     });
