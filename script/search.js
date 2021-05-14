@@ -2,26 +2,27 @@
 
 const urlresultados = 'https://api.giphy.com/v1/gifs/search';
 const urlsugerencias = 'https://api.giphy.com/v1/gifs/search/tags';
-let api_key = 'GWh43EKcmjngwSbGuEUebGNcgiQmDelI';
+const api_key = 'GWh43EKcmjngwSbGuEUebGNcgiQmDelI';
 let word = document.getElementById('inp-search');
 let wordTwo = document.getElementById('inp-search-header');
-let okBanner = document.getElementById('search');
-let okHeader = document.getElementById('search-header');
-let titulo = document.getElementById('titulo');
-let banner = document.getElementById('cont-img');
-let title = document.getElementById('title');
-let resultados = document.getElementById('resultados');
-let noResultados = document.getElementById('noResultados');
-let vermas = document.getElementById('ver-mas');
+const okBanner = document.getElementById('search');
+const okHeader = document.getElementById('search-header');
+const titulo = document.getElementById('titulo');
+const banner = document.getElementById('cont-img');
+const title = document.getElementById('title');
+const resultados = document.getElementById('resultados');
+const noResultados = document.getElementById('noResultados');
+const vermas = document.getElementById('ver-mas');
 let element =  document.getElementById('contResul');
 let elementSug = document.getElementById('sugerencias');
 let contResultados = document.getElementById('div-resultados');
 let contSugerencias = document.getElementById('div-sugerencias');
 let gif = document.getElementsByClassName('gif');
 const buscar = document.getElementById('searchHeader');
-let imgSugerencias = document.getElementById('img-search-active');
-let closeSugerencias = document.getElementById('close-search');
-let lineSugerencias = document.getElementById('line');
+const imgSugerencias = document.getElementById('img-search-active');
+const closeSugerencias = document.getElementById('close-search');
+const lineSugerencias = document.getElementById('line');
+let limitcont = 1;
 
 //Search header
 
@@ -37,8 +38,8 @@ window.addEventListener('scroll', activarBuscador);
 //sugerencia de busquedas
 
 async function sugerencias(){
-    let wordBanner = word.value;
-    let wordHeader = wordTwo.value;
+    const wordBanner = word.value;
+    const wordHeader = wordTwo.value;
     contSugerencias.removeChild(elementSug);
     elementSug = document.createElement("div");
     elementSug.className = "sugerencias";
@@ -77,7 +78,6 @@ function captura_click(e) {
     if (classElement === "text"){
         let mostrar = document.getElementById(`${idElement}`)
         wordthree = mostrar.innerHTML;
-        console.log(wordthree)
         word = '';
         traer();
     }
@@ -99,15 +99,18 @@ closeSugerencias.addEventListener('click', close);
 
 //resultados de busqueda
 
-async function traer(){
+async function traer(limit){
+    limitcont += 1;
     let wordBanner = word.value;
     let wordHeader = wordTwo.value;
     let wordSugerencia = wordthree;
-    contResultados.removeChild(element);
-    element = document.createElement("div");
-    element.className = "resultadosObtenidos";
-    element.id = "contResult"
-    contResultados.appendChild(element);
+    if (limit === 12){
+        contResultados.removeChild(element);
+        element = document.createElement("div");
+        element.className = "resultadosObtenidos";
+        element.id = "contResult"
+        contResultados.appendChild(element);
+    }
     banner.style.display = "none";
     title.style.display = "none";
     resultados.style.display = "flex";
@@ -120,7 +123,7 @@ async function traer(){
             titulo.innerHTML = `<div class="line"></div>
             <p class="titulo">Lorem Ipsum</p>`
         }else{
-            for (i = 0; i < 12; i++){
+            for (i = limit-12; i < limit; i++){
                 let gifs = data.data[i].images.original.url;
                 let tarGif = document.createElement("div");
                 tarGif.id = "gif";
@@ -136,5 +139,6 @@ async function traer(){
     });
 }  
 
-okBanner.addEventListener('click',traer);
-okHeader.addEventListener('click',traer);
+okBanner.addEventListener('click',()=>traer(12));
+okHeader.addEventListener('click',()=>traer(12));
+vermas.addEventListener('click',()=>traer(limitcont * 12));
