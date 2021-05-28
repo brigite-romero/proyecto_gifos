@@ -79,7 +79,7 @@ function captura_click(e) {
         let mostrar = document.getElementById(`${idElement}`)
         wordthree = mostrar.innerHTML;
         word = '';
-        traer();
+        traer(12);
     }
 }
 
