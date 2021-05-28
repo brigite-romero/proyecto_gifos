@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 body {
   box-sizing: border-box;
@@ -147,9 +148,9 @@ body {
   padding-left: 22px;
 }
 .trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
+  position: relative;
   width: 243px;
   height: 187px;
-  background: chartreuse;
 }
 .trending .gifos-car .arrows {
   display: none;
@@ -399,6 +400,85 @@ body {
   .trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
     width: 357px;
     height: 275px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img {
+    display: none;
+    position: relative;
+    margin-top: -280px;
+    background: rgba(87, 46, 229, 0.6);
+    width: 357px;
+    height: 275px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .subtitle {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    margin: 0px;
+    padding-top: 139px;
+    padding-left: 18px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .subtitle::before {
+    position: relative;
+    content: "User";
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .title-gif {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    margin: 0px;
+    padding-top: 163px;
+    padding-left: 19px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .title-gif::before {
+    position: relative;
+    content: "Título GIFO";
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box {
+    height: 32px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label #check {
+    display: none;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label #check:checked ~ .img-heart {
+    display: none;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label #check:checked ~ .bx-act {
+    display: inline-block;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .img-heart {
+    width: 32px;
+    height: 32px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .img-heart:hover ~ .img-heart-hov {
+    display: inline-block;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .img-heart-hov {
+    display: none;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .bx-act {
+    display: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .bx-act .img-heart-act {
+    padding: 8.1px 7px;
+    width: 18px;
+    height: 15.9px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link:hover .hover-img {
+    display: block;
   }
   .trending .gifos-car .content-car .carousel .gif:last-child {
     padding-right: 0;

@@ -145,11 +145,11 @@
                 .gif {
                     padding-left: 22px;
                     .gifi-link {
-                        .gifi {
-                            width: 243px;
-                            height: 187px;
-                            background: chartreuse;
-                        }
+                      .gifi {
+                        position: relative;
+                        width: 243px;
+                        height: 187px;
+                      }
                     }
                 }
             }
@@ -446,14 +446,105 @@
                         padding-left: 0;
                         padding-right: 27px;
                         .gifi-link {
-                            .gifi {
-                                width: 357px;
-                                height: 275px;
+                          .gifi {
+                            width: 357px;
+                            height: 275px;
+                          }
+                          .hover-img {
+                            display: none;
+                            position: relative;
+                            margin-top: -280px;
+                            background: rgba(87, 46, 229, 0.6);
+                            width: 357px;
+                            height: 275px;
+                            .subtitle {
+                              position: absolute;
+                              width: fit-content;
+                              height: fit-content;
+                              margin: 0px;
+                              padding-top: 139px;
+                              padding-left: 18px;
+                              &::before {
+                                position: relative;
+                                content: "User";
+                                font-family: 'Roboto', sans-serif;
+                                font-size: 15px;
+                                font-weight: 400;
+                                color: #FFFFFF;
+                                text-align: center;
+                              }
                             }
+                            .title-gif {
+                              position: absolute;
+                              width: fit-content;
+                              height: fit-content;
+                              margin: 0px;
+                              padding-top: 163px;
+                              padding-left: 19px;
+                              &::before {
+                                position: relative;
+                                content: "Título GIFO";
+                                font-family: 'Roboto', sans-serif;
+                                font-size: 16px;
+                                font-weight: 700;
+                                color: #FFFFFF;
+                                text-align: center;
+                              }
+                            }
+// ------------------------------------Aquí va lo del corazón, descarga y zoom-------------------------------------------
+                            .content-fav {
+                              .heart-box {
+                                height: 32px;
+                                label {
+                                  #check {
+                                    display: none;
+                                    &:checked {
+                                      ~.img-heart {
+                                        display: none;
+                                      }
+                                      ~.bx-act {
+                                        display: inline-block;
+                                      }
+                                    }
+                                  }
+                                  .img-heart {
+                                    width: 32px;
+                                    height: 32px;
+                                    &:hover {
+                                      ~.img-heart-hov {
+                                        display: inline-block;
+                                      }
+                                    }
+                                  }
+                                  .img-heart-hov {
+                                    display: none;
+                                  }
+                                  .bx-act {
+                                    display: none;
+                                    width: 32px;
+                                    height: 32px;
+                                    border-radius: 6px;
+                                    background-color: #FFFFFF;
+                                    .img-heart-act {
+                                      padding: 8.1px 7px;
+                                      width: 18px;
+                                      height: 15.9px;
+                                    }
+                                  }
+                                }
+                              }
+                            }
+// ------------------------------------Aquí termina lo del corazón, descarga y zoom--------------------------------------
+                          }
+                          &:hover {
+                            .hover-img {
+                              display: block;
+                            }
+                          }
                         }
                         &:last-child {
-                            padding-right: 0;
-                          }
+                          padding-right: 0;
+                        }
                     }
                 }
             }
