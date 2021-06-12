@@ -152,6 +152,10 @@ body {
   width: 243px;
   height: 187px;
 }
+.trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
+  width: 243px;
+  height: 187px;
+}
 .trending .gifos-car .arrows {
   display: none;
 }
@@ -476,6 +480,48 @@ body {
     padding: 8.1px 7px;
     width: 18px;
     height: 15.9px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box {
+    height: 32px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label #checkDown {
+    display: none;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down {
+    width: 32px;
+    height: 32px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down:hover {
+    display: none;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down:hover ~ .img-down-hov {
+    display: inline-block;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down-hov {
+    display: none;
+    width: 32px;
+    height: 32px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box {
+    height: 32px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label #checkZoom {
+    display: none;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom {
+    width: 32px;
+    height: 32px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom:hover {
+    display: none;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom:hover ~ .img-zoom-hov {
+    display: inline-block;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom-hov {
+    width: 32px;
+    height: 32px;
+    display: none;
   }
   .trending .gifos-car .content-car .carousel .gif .gifi-link:hover .hover-img {
     display: block;

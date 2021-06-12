@@ -86,6 +86,64 @@ async function getData (url) {
     img_heart_hov.alt = "Heart Active";
     label.appendChild(img_heart_hov);
 
+    // Aquí empieza la parte de download
+
+    const down_box = document.createElement("div");
+    down_box.className = "down-box";
+    content_fav.appendChild(down_box);
+
+    const label_down = document.createElement("label");
+    down_box.appendChild(label_down);
+
+    const check_down = document.createElement("input");
+    check_down.type = "checkbox";
+    check_down.id = "checkDown";
+    check_down.value = "down_1";
+    label_down.appendChild(check_down);
+
+    const img_down = document.createElement("img");
+    img_down.className = "img-down";
+    img_down.src = "./assets/icon-download.svg";
+    img_down.alt = "Download";
+    label_down.appendChild(img_down);
+
+    const img_down_hov = document.createElement("img");
+    img_down_hov.className = "img-down-hov";
+    img_down_hov.src = "./assets/icon-download-hover.svg";
+    img_down_hov.alt = "Download hover";
+    label_down.appendChild(img_down_hov);
+
+    // Aquí termina la parte de download
+
+    // Parte hacerle zoom
+
+    const zoom_box = document.createElement("div");
+    zoom_box.className = "zoom-box";
+    content_fav.appendChild(zoom_box);
+
+    const label_zoom = document.createElement("label");
+    zoom_box.appendChild(label_zoom);
+
+    const check_zoom = document.createElement("input");
+    check_zoom.type = "checkbox";
+    check_zoom.id = "checkZoom";
+    check_zoom.value = "zoom_1";
+    label_zoom.appendChild(check_zoom);
+
+    const img_zoom = document.createElement("img");
+    img_zoom.className = "img-zoom";
+    img_zoom.src = "./assets/icon-max-normal.svg";
+    img_zoom.alt = "Max";
+    label_zoom.appendChild(img_zoom);
+
+    const img_zoom_hov = document.createElement("img");
+    img_zoom_hov.className = "img-zoom-hov";
+    img_zoom_hov.src = "./assets/icon-max-hover.svg";
+    img_zoom_hov.alt = "Zoom hover";
+    label_zoom.appendChild(img_zoom_hov);
+
+    // Finaliza parte hacerle zoom
+
 // Aquí termina todo eso
 
     const subtitle = document.createElement("h2");

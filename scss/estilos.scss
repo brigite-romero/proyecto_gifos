@@ -497,6 +497,9 @@
                             }
 // ------------------------------------Aquí va lo del corazón, descarga y zoom-------------------------------------------
                             .content-fav {
+                              // height: 32px;
+                              // display: flex;
+                              // flex-direction: column;
                               .heart-box {
                                 height: 32px;
                                 label {
@@ -534,6 +537,52 @@
                                       width: 18px;
                                       height: 15.9px;
                                     }
+                                  }
+                                }
+                              }
+                              .down-box {
+                                height: 32px;
+                                label {
+                                  #checkDown {
+                                    display: none;
+                                  }
+                                  .img-down {
+                                    width: 32px;
+                                    height: 32px;
+                                    &:hover {
+                                      display: none;
+                                      ~.img-down-hov {
+                                        display: inline-block;
+                                      }
+                                    }
+                                  }
+                                  .img-down-hov {
+                                    display: none;
+                                    width: 32px;
+                                    height: 32px;
+                                  }
+                                }
+                              }
+                              .zoom-box {
+                                height: 32px;
+                                label {
+                                  #checkZoom {
+                                    display: none;
+                                  }
+                                  .img-zoom {
+                                    width: 32px;
+                                    height: 32px;
+                                    &:hover {
+                                      display: none;
+                                      ~.img-zoom-hov {
+                                        display: inline-block;
+                                      }
+                                    }
+                                  }
+                                  .img-zoom-hov {
+                                    width: 32px;
+                                    height: 32px;
+                                    display: none;
                                   }
                                 }
                               }
