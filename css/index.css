@@ -1448,7 +1448,7 @@ body {
 .share-mg {
   bottom: 0;
   left: 0;
-  position: fixed;
+  position: relative;
 }
 
 @media (min-width: 1440px) {
