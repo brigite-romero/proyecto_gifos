@@ -1,221 +1,279 @@
-.creargifos{
-    padding: 100px 20px 26px 0;
+.create-gifo{
+  margin-top: 100px;
+  text-align: center;
+  display: block;
+  .container-record{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1110px;
-    margin: auto;
-    .camara{
-        display: flex;
-        padding: 0 30px 0 0;
-        width: 175px;
-        .grabadora{
-            .noc{
-                display: none;
-            }
-        }
-        .luz{
-            padding-top: 20px;
-        }
+    margin: 4px 156px 0px 156px;
+    justify-content: space-between;
+    .camera{
+      width: 220px;
+      height: 390px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      #camera{
+        width: 123px;
+      }
+      #light{
+        width: 91px;
+        padding-left: 5px;
+        padding-top: 5px;
+      }
     }
-    .proceso{
-        display: flex;
+    .record{
+      .border{
         width: 688px;
-        height: 470px;
-        flex-wrap: wrap;
-        justify-content: center;
-           
-        .cuadro{
-            width: 100%;
-            display: flex;
-            height: 390px;
-            flex-direction: column;
-            border: 1px solid $color-morado;
-            align-items: center;
-
-            .top{
-                display: flex;
-                justify-content: space-between;
-                width: 648px;
-                height: 25px;
-                margin-top: 24px;
-                .borde{
-                    width: 27px;
-                    height: 25px;
-                }
-                .left{
-                    border-top: 2px solid $color-aguamarina;
-                    border-left: 2px solid $color-aguamarina;
-                }
-                .right{
-                    border-top: 2px solid $color-aguamarina;
-                    border-right: 2px solid $color-aguamarina;
-                }
-            }
-            .text{
-                margin: auto;
-                .title{
-                    font-family: 'Montserrat', sans-serif;
-                    font-weight: 600;
-                    font-size: 25px;
-                    color: $color-morado;
-                    text-align: center;
-                    line-height: 35px;
-
-                    .gifos{
-                        color: $color-aguamarina;
-                    }
-                }
-                .parrafo{
-                    font-family: 'Roboto', sans-serif;
-                    font-weight: 400;
-                    font-size: 16px;
-                    color: $color-negro;
-                    text-align: center;
-                    line-height: 29px;
-                }
-            }
-            .bottom{
-                display: flex;
-                justify-content: space-between;
-                width: 648px;
-                height: 25px;
-                margin-bottom: 24px;
-                .borde{
-                    width: 27px;
-                    height: 25px;
-                }
-                .left{
-                    border-bottom: 2px solid $color-aguamarina;
-                    border-left: 2px solid $color-aguamarina;
-                }
-                .right{
-                    border-bottom: 2px solid $color-aguamarina;
-                    border-right: 2px solid $color-aguamarina;
-                }
-            }
-        }    
-        .pasos{
-            display: flex;
-            order: 2;
-            justify-content: space-between;
-            width: 145px;
-            margin: 24px 0 19px 0;
-            .paso{
-                border: 1px solid $color-morado;
-                border-radius: 40px;
-                width: 32px;
-                height: 32px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: 'Roboto', sans-serif;
-                font-weight: 500;
-                font-size: 18px;
-                color: $color-morado;
-                text-align: center;
-            }
-        }   
-    } 
-    .pelicula{
-        padding: 0 0 0 67px;
-        .diu{
-            margin-top: 378px;
-        }
-        .noc{
-            display: none;
-        }
-    } 
-    .line{
-        margin: 0 150px 20px 150px;
-        height: 7px;
-        width: 795px;
-        background: $color-morado;
-        border-radius: 5px;
-    }
-    .button{
-        width: 127px;
-        height: 50px;
-        border: 1px solid $color-morado;
-        border-radius: 25px;
+        height: 390px;
+        border: solid 1px #572EE5;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 800;
-        font-size: 13px;
-        color: $color-morado;
-        letter-spacing: 0;
-        text-align: center;
-        cursor: pointer;
-
-        &:hover{
-            background: $color-morado;
-            color: $color-blanco;
+        .corner{
+          width: 25px;
+          height: 27px;
+          position: absolute;
         }
-    }  
-}
-.darkmode{
-    .creargifos{
-        .camara{
-            .grabadora{
-                .noc{
-                    display: block;
-                }
-                .diu{
-                    display: none;
-                }
-            }
-            .luz{
-                padding-top: 20px;
-            }
+        .one{
+          border-top: solid 1px #50E3C2;
+          border-left: solid 1px #50E3C2;
+          top: 20px;
+          left: 20px;
         }
-        .proceso{
-               
-            .cuadro{
-                border: 1px solid $color-blanco;
-
-                .text{
-                    .title{
-                        color: $color-blanco;
-                    }
-                    .parrafo{
-                        color:$color-blanco;
-                    }
-                }
-            }    
-            .pasos{
-                .paso{
-                    border: 1px solid $color-blanco;
-                    color: $color-blanco;
-                }
-            }   
-        } 
-        .pelicula{
-            .noc{
-                display: block;
-                margin-top: 378px;
-            }
-            .diu{
-                display: none;
-            }
-        } 
-        .line{
-            background: $color-blanco;
+        .two{
+          border-top: solid 1px #50E3C2;
+          border-right: solid 1px #50E3C2;
+          top: 20px;
+          right: 20px;
         }
-        .button{
-            border: 1px solid $color-blanco;
-            color: $color-blanco;
+        .three{
+          border-bottom: solid 1px #50E3C2;
+          border-left: solid 1px #50E3C2;
+          bottom: 20px;
+          left: 20px;
+        }
+        .four{
+          border-bottom: solid 1px #50E3C2;
+          border-right: solid 1px #50E3C2;
+          bottom: 20px;
+          right: 20px;
+        }
+        .video{
+          width: 480px;
+          height: 320px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          .title{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            color: #572EE5;
+            font-size: 25px;
+            line-height: 35px;
+            margin: 0 0 3px 0;
+            .mayus{
+              color: #50E3C2;
+            }
+          }
+          .paragraph{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 29px;
+            text-align: center;
+            margin: 0;
+            color: #000000;
+          }
+          .video-over{
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(87, 46, 229, 0.6);
+            text-align: center;
+            position: absolute;
+            z-index: 5;
+            #shares{
+              display: none;
+              position: absolute;
+              top: 12px;
+              right: 12px;
+              #download-gif,
+              #link-gif{
+                position: absolute;
+                top: 0;
+                width: 32px;
+                height: 32px;
+                border-radius: 6px;
+                border: none;
+                background: rgba(255, 255, 255, 0.7);
+                margin: 0;
+                cursor: pointer;
+                &:hover{
+                  background: rgb(255, 255, 255);
+                }
+              }
+              #download-gif{
+                right: 42px;
+              }
+              #link-gif{
+                right: 0;
+              }
+            }
+            #content-txt{
+              display: flex;
+              flex-direction: column;
+              #icon-loading{
+                margin: 0;
+              }
+              #load-para{
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 19px;
+                color: #FFFFFF;
+                margin: 10px 0;
+              }
+            }
+          }
+          .video-v{
+            display: none;
+            position: absolute;
+            z-index: 1;
+          }
+          .gif{
+            display: none;
+            width: 480px;
+            height: 320px;
+            position: absolute;
+            z-index: 2;
+          }
+        }
+      }
+      .content-steps{
+        height: 75px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        position: relative;
+        .steps{
+          display: flex;
+          .step{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: solid 1px #572EE5;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    align-items: center;
+            margin-right: 25px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 21px;
+            color: #572EE5;
+          }
+          p:last-child{
+            margin-right: 0px;
+          }
+          .act-step{
+            background: #572EE5;
+            color: #FFFFFF;
+          }
+        }
+        .counter{
+          position: absolute;
+          right: 0;
+          .time{
+            display: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            color: #572EE5;
+            font-size: 15px;
+            line-height: 22px;
+          }
+          #replay{
+            display: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            color: #572EE5;
+            font-size: 13px;
+            line-height: 16px;
+            background: unset;
+            border: none;
+            border-bottom: solid 2px #FFFFFF;
+            cursor: pointer;
             &:hover{
-                background: $color-blanco;
-                color: $color-fondo;
+              border-bottom: solid 2px #50E3C2;
             }
-        }   
+          }
+        }
+      }
     }
+    .movie{
+      width: 220px;
+      height: 465px;
+      position: relative;
+      #movie{
+        width: 142px;
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+      }
+    }
+  }
+  .divider{
+    width: 795px;
+    height: 7px;
+    border-radius: 50px;
+    background: #572EE5;
+    margin: 0 auto 20px;
+  }
+  .content-buttons{
+    text-align: center;
+    .general-btn{
+      font-weight: 600;
+      margin: 0 auto 26px;
+      color: #572EE5;
+      background: unset;
+      border: solid 1px #572EE5;
+      border-radius: 25px;
+      padding: 16px 32px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: center;
+      &:hover{
+        background: #572EE5;
+        color: #FFFFFF;
+      }
+    }
+    .recorder,
+    .finish,
+    .upload{
+      display: none;
+    }
+  }
 }
+
 .share-mg{
-    bottom: 0;
-    left: 0;
-    position: relative;
+  bottom: 0;
+  left: 0;
+  position: relative;
 }
