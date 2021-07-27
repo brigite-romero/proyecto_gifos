@@ -11,95 +11,97 @@
     <title>Crear gifos</title>
 </head>
 <body id="body">
-    <div class="line-purple"></div>
-    <header class="header">
-        <a href="./index.html" class="logo">
-            <img class="logo-mobile diu" src="./assets/logo-mobile.svg" alt="logo">
-            <img class="logo-desktop diu" src="./assets/logo-desktop.svg" alt="logo">
-            <img class="logo-mobile noc" src="./assets/logo-mobile-modo-noct.svg" alt="logo">
-            <img class="logo-desktop noc" src="./assets/Logo-modo-noc.svg" alt="logo">
-        </a>
-        <div class="search" id="searchHeader">
-            <input type="text" class="inp-search" id="inp-search-header" placeholder="Busca GIFOS y más">
-            <button class="butt-search diu"><img class="img-search" src="./assets/icon-search.svg" alt="search"></button>
-            <button class="butt-search noc"><img class="img-search" src="./assets/icon-search-mod-noc.svg" alt="search"></button>
-        </div>
-        <div class="menu-container">
-            <input type="checkbox" class="menu-check" id="menu-check">
-            <label for="menu-check">
-                <span class="icon-menu">
-                    <img class="diu" src="./assets/burger.svg" alt="menu">
-                    <img class="noc" src="./assets/burger-modo-noct.svg" alt="menu">
-                </span>
-                <span class="closed">
-                    <img class="diu" src="./assets/close.svg" alt="">
-                    <img class="noc" src="./assets/close-modo-noct.svg" alt="">
-                </span>
-            </label>
-           <div class="menu">
-            <a class="con-item diu" href="#" id="darkmode">Modo Nocturno</a>
-            <a class="con-item noc" href="#" id="mododiurno">Modo Diurno</a>
-            <div class="line"></div>
-            <a class="con-item" href="./favoritos.html">Favoritos</a>
-            <div class="line"></div>
-            <a class="con-item" href="./misgifos.html">Mis GIFOS</a>
-                <div class="more"> 
-                  <img class="create" src="./assets/CTA-crear-gifo-active.svg" alt="create">
-                </div>
-            </div>
-        </div>
-    </header>
-
-  <section class="create-gifo">
-    <div class="container-record">
-      <div class="camera">
-        <img src="./assets/camara.svg" alt="Cámara" id="camera">
-        <img src="./assets/element-luz-camara.svg" alt="Luz de la cámara" id="light">
+  <div class="line-purple"></div>
+  <header class="header">
+      <a href="./index.html" class="logo">
+          <img class="logo-mobile diu" src="./assets/logo-mobile.svg" alt="logo">
+          <img class="logo-desktop diu" src="./assets/logo-desktop.svg" alt="logo">
+          <img class="logo-mobile noc" src="./assets/logo-mobile-modo-noct.svg" alt="logo">
+          <img class="logo-desktop noc" src="./assets/Logo-modo-noc.svg" alt="logo">
+      </a>
+      <div class="search" id="searchHeader">
+          <input type="text" class="inp-search" id="inp-search-header" placeholder="Busca GIFOS y más">
+          <button class="butt-search diu"><img class="img-search" src="./assets/icon-search.svg" alt="search"></button>
+          <button class="butt-search noc"><img class="img-search" src="./assets/icon-search-mod-noc.svg" alt="search"></button>
       </div>
-      <div class="record">
-        <div class="border">
-          <div class="corner one"></div>
-          <div class="corner two"></div>
-          <div class="corner three"></div>
-          <div class="corner four"></div>
-          <div class="video">
-            <h2 class="title">Aquí podrás <br>crear tus propios <span class="mayus">GIFOS</span></h2>
-            <p class="paragraph">¡Crea tu GIFO en sólo 3 pasos! <br>(sólo necesitas una cámara para grabar un video)</p>
-            <div class="video-over">
-              <div id="shares"></div>
-              <div id="content-txt">
-                <img src="./assets/loader.svg" alt="Cargando GIFO" id="icon-loading">
-                <p id="load-para">Estamos subiendo tu GIFO</p>
+      <div class="menu-container">
+          <input type="checkbox" class="menu-check" id="menu-check">
+          <label for="menu-check">
+              <span class="icon-menu">
+                  <img class="diu" src="./assets/burger.svg" alt="menu">
+                  <img class="noc" src="./assets/burger-modo-noct.svg" alt="menu">
+              </span>
+              <span class="closed">
+                  <img class="diu" src="./assets/close.svg" alt="">
+                  <img class="noc" src="./assets/close-modo-noct.svg" alt="">
+              </span>
+          </label>
+          <div class="menu">
+          <a class="con-item diu" href="#" id="darkmode">Modo Nocturno</a>
+          <a class="con-item noc" href="#" id="mododiurno">Modo Diurno</a>
+          <div class="line"></div>
+          <a class="con-item" href="./favoritos.html">Favoritos</a>
+          <div class="line"></div>
+          <a class="con-item" href="./misgifos.html">Mis GIFOS</a>
+              <div class="more"> 
+                <img class="create" src="./assets/CTA-crear-gifo-active.svg" alt="create">
               </div>
-            </div>
-            <video src="" class="video-v"></video>
-            <img src="" alt="" class="gif">
           </div>
+      </div>
+  </header>
+
+  <main>
+    <div class="create-gifos">
+      <section class="create-gifos__main-container">
+        <div class="create-gifos__main">
+          <div class="create-gifos__icon-camera">
+            <img
+              class="create-gifos__camera"
+              src="./assets/camara.svg"
+              alt="Cámara"
+              id="camera"
+            />
+            <img
+              class="create-gifos__light"
+              src="./assets/element-luz-camara.svg"
+              alt="Luz que emite la cámara"
+            />
+          </div>
+          <h2>Aquí podrás <br>crear tus propios <span>GIFOS</span></h2>
+          <p>
+            ¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)
+          </p>
+          <img
+            class="create-gifos__icon-movie"
+            src="./assets/pelicula.svg"
+            alt="Cinta de película"
+            id="movie"
+          />
+          <span class="frames create-gifos__first-frame"></span>
+          <span class="frames create-gifos__second-frame"></span>
+          <span class="frames create-gifos__third-frame"></span>
+          <span class="frames create-gifos__last-frame"></span>
         </div>
-        <div class="content-steps">
-          <div class="steps">
-            <p class="step">1</p>
-            <p class="step">2</p>
-            <p class="step">3</p>
-          </div>
-          <div class="counter">
-            <p class="time">0:00:00</p>
-            <button id="replay">REPETIR CAPTURA</button>
-          </div>
+      </section>
+
+      <div class="create-gifos__steps-container">
+        <div class="create-gifos__steps">
+          <span>1</span>
+        </div>
+
+        <div class="create-gifos__steps">
+          <span>2</span>
+        </div>
+
+        <div class="create-gifos__steps">
+          <span>3</span>
         </div>
       </div>
-      <div class="movie">
-        <img src="./assets/pelicula.svg" alt="Película" id="movie">
-      </div>
+
+      <div class="create-gifos__purple-bar"></div>
+      <button class="create-gifos__start" id="btnStartRecord">Comenzar</button>
     </div>
-    <div class="divider"></div>
-    <div class="content-buttons">
-      <button class="general-btn begin">COMENZAR</button>
-      <button class="general-btn recorder">GRABAR</button>
-      <button class="general-btn finish">FINALIZAR</button>
-      <button class="general-btn upload">SUBIR GIFO</button>
-    </div>
-  </section>
+  </main>
 
   <footer class="share share-mg">
     <div class="text-footer">
@@ -122,6 +124,7 @@
     <div class="line-bottom"></div>
   </footer>
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+  <script src="https://www.webrtc-experiment.com/gif-recorder.js"></script>
   <script src="./script/crearGif.js"></script>
   <script src="./script/modonocturno.js"></script>
 </body>

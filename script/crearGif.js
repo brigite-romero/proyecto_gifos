@@ -1,169 +1,255 @@
 const apiKey = 'n8KtgV7bEMIp74WJ2vJjRcoZXAvQiPX5';
 
-const btnBegin = document.getElementsByClassName('begin');
-let recorder = document.getElementsByClassName('recorder');
-let finish = document.getElementsByClassName('finish');
-let upload = document.getElementsByClassName('upload');
-let act_step = document.querySelectorAll('.step');
-let time = document.getElementsByClassName('time');
-let replay = document.getElementById('replay');
-let video_over = document.getElementsByClassName('video-over');
-let icon_loading = document.getElementById('icon-loading');
-let load_para = document.getElementById('load-para');
-let shares = document.getElementById('shares');
-let actions = document.getElementById('shares');
-let recording;
-let blob;
-let date;
+let recorder;
+const btnStartRecord = document.querySelector("#btnStartRecord");
+const titleCreateGifos = document.querySelector(".create-gifos__main > h2");
+const textCreateGifos = document.querySelector(".create-gifos__main > p");
+const firstStepCreateGifos = document.querySelector(".create-gifos__steps");
+const mainContainer = document.querySelector(".create-gifos__main");
+const videoContainer = document.createElement("div");
+const videoRecord = document.createElement("video");
+const secondStepCreateGifos = document.querySelectorAll(".create-gifos__steps")[1];
+const timer = document.createElement("div");
 let form = new FormData();
-let list_gifos = [];
-let gifos_as_txt = localStorage.getItem('mis_gifos');
-let video_v = document.getElementsByClassName('video-v');
-let gif = document.getElementsByClassName('gif');
+const lastStepCreateGifos = document.querySelectorAll(".create-gifos__steps")[2];
+const textContainerVideo = document.createElement("div");
+const textContentVideo = document.createElement("p");
+const purpleBackground = document.createElement("div");
+const loader = document.createElement("img");
+let gifID;
 
-function starting() {
-  btnBegin.style.display = "none";
-  let title = document.getElementsByClassName('title');
-  let paragraph = document.getElementsByClassName('paragraph');
-  title.innerHTML = "¿Nos das acceso </br>a tu cámara?";
-  paragraph.innerHTML = "El acceso a tu cámara será válido sólo </br>por el tiempo en el que estés creando el GIFO."
-  act_step[0].classList.add('act-step');
-  navigator.mediaDevices.getUserMedia({ audio: false, video: { width: 480, height: 320 } })
-    .then(function (mediaStream) {
-      title.style.display = "none";
-      paragraph.style.display = "none";
-      recorder.style.display = "block";
-      act_step[0].classList.remove('act-step');
-      act_step[1].classList.add('act-step');
-      video_v.style.display = "block";
-      video_v.srcObject = mediaStream;
-      video_v.onloadedmetadata = function (e) {
-        video_v.play();
-      };
-      recording = RecordRTC(mediaStream, {
-        type: 'gif'
-      });
-    })
+const watch = timer;
+let milliseconds = 0;
+let chronometer;
+
+const allMyGifos = [];
+
+const $header = document.querySelector(".header__container--flex");
+
+// $header.addEventListener("click", saveOnLocalStorage);
+
+const saveOnLocalStorage = () => {
+  if (localStorage.getItem("myGifos")) {
+    const alreadySavedItems = JSON.parse(localStorage.getItem("myGifos"));
+
+    allMyGifos.push(...alreadySavedItems);
+  }
+
+  const itemsMap = allMyGifos.map((item) => [item.id, item]);
+  const itemsMapArr = new Map(itemsMap);
+
+  const uniques = [...itemsMapArr.values()];
+
+  localStorage.setItem("myGifos", JSON.stringify(uniques));
+};
+
+
+function timeStart() {
+  clearInterval(chronometer);
+  chronometer = setInterval(() => {
+    milliseconds += 10;
+
+    const dateTimer = new Date(milliseconds);
+
+    watch.innerHTML = `${`0${dateTimer.getUTCMinutes()}`.slice(-2)}:${`0${dateTimer.getUTCSeconds()}`.slice(
+      -2
+    )}:${`0${dateTimer.getUTCMilliseconds()}`.slice(-3, -1)}`;
+  }, 10);
 }
 
-
-function making() {
-  recording.startRecording();
-  console.log("grabando");
-  recorder.style.display = "none";
-  finish.style.display = "block";
-  time.style.display = "block";
-  replay.style.display = "none";
-  date = new Date().getTime();
-  (function loop() {
-    if (!recording) {
-      return;
-    }
-    time.innerHTML = timer((new Date().getTime() - date) / 1000);
-    setTimeout(loop, 1000);
-  })();
+function timePaused() {
+  clearInterval(chronometer);
 }
 
-
-function finishing() {
-  console.log("terminado");
-  finish.style.display = "none";
-  upload.style.display = "block";
-  time.style.display = "none";
-  replay.style.display = "block";
-  recording.stopRecording(function () {
-    video_v.style.display = "none";
-    gif.style.display = "block";
-    blob = recording.getBlob();
-    gif.src = URL.createObjectURL(recording.getBlob());
-    form.append('file', recording.getBlob(), 'myGif.gif');
-    form.append('api_key', apiKey);
+const actionBtnStartRecord = () => {
+  captureCamera((stream) => {
+    recorder = RecordRTC(stream, {
+      type: "gif",
+      frameRate: 1,
+      quality: 10,
+      width: 360,
+      hidden: 240,
+      onGifRecordingStarted() {
+        console.log("started");
+      },
+    });
   });
-}
+  btnStartRecord.style = "display: none;";
+  titleCreateGifos.innerHTML = "¿Nos das acceso <br /> a tu cámara?";
+  textCreateGifos.innerHTML = "El acceso a tu cámara será válido sólo <br /> por el tiempo en el que estés creando el GIFO.";
+  firstStepCreateGifos.className = "create-gifos__steps--highlighted ";
+};
 
-
-
-function uploading() {
-  video_over.style.display = "flex";
-  upload.style.display = "none";
-  act_step[1].classList.remove('act-step');
-  act_step[2].classList.add('act-step');
-  replay.style.display = "none";
-  fetch(`https://upload.giphy.com/v1/gifs`, {
-    method: 'POST',
-    body: form,
-  })
-    .then(response => {
-      return response.json();
-    })
-    .then(object => {
-      console.log(object);
-      let id_gif = object.data.id;
-      shares.style.display = "block";
-      icon_loading.setAttribute('src', './assets/check.svg');
-      load_para.innerHTML = "GIFO subido con éxito";
-      actions.innerHTML = `
-        <button class="btn-video-js" id="download" onclick="download_gif('${id_gif}')">
-        <img src="./assets/icon-download.svg" alt="Descargar gif">
-        </button>
-        <button class="btn-video-js" id="link">
-        <img src="./assets/icon-link.svg" alt="Link gif">
-        </button>
-        `;
-      if (gifos_as_txt == null) {
-        list_gifos = [];
-      } else {
-        list_gifos = JSON.parse(gifos_as_txt)
-      }
-      list_gifos.push(id_gif);
-      gifos_as_txt = JSON.stringify(list_gifos);
-      localStorage.setItem("mis_gifos", gifos_as_txt);
-    })
-    .catch( error => console.log("Error al intentar subir gif" + error))
-}
-
-async function download_gif(gifymg) {
-  let blob = await fetch(gifymg).then(img => img.blob());
-  invokeSaveAsDialog(blob, "myGifo.gif");
-}
-
-
-function replaying() {
-  recording.clearRecordedData();
-  console.log("Repitiendo captura de gif");
-  replay.style.display = "none";
-  upload.style.display = "none";
-  gif.style.display = "none";
-  recorder.style.display = "block";
-  navigator.mediaDevices.getUserMedia( { audio: false, video: {width: 480, height: 320} } )
-    .then(function (mediaStream) {
-      video_v.style.display = "block";
-      video_v.srcObject = mediaStream;
-      video_v.onloadedmetadata = function (e) {
-        video_v.play();
-      };
-      recording = RecordRTC(mediaStream, {
-        type: 'gif'
-      });
-    })
-}
-
-
-function timer(ss) {
-  let hour = Math.floor(ss/3600);
-  let minutes = Math.floor((ss - (hour * 3600))/60);
-  let seconds = Math.floor(ss - (hour * 3600) - (minutes * 60));
-  if (minutes < 10) {
-    minutes = "0" + minutes;
+async function postData() {
+  try {
+    const res = await fetch("https://upload.giphy.com/v1/gifs?api_key=n8KtgV7bEMIp74WJ2vJjRcoZXAvQiPX5", {
+      method: "post",
+      body: form,
+      redirect: "follow",
+    });
+    const json = await res.json();
+    gifID = json.data.id;
+  } catch (error) {
+    console.log(error);
   }
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
-  return hour + ':' + minutes + ':' + seconds;
 }
 
-replay.addEventListener('click', replaying);
-btnBegin.addEventListener('click', starting);
-recorder.addEventListener('click', making);
-finish.addEventListener('click', finishing);
-upload.addEventListener('click', uploading);
+// -----------------------------------------esto ya está también-----------------------------
+
+async function getMyGif() {
+  try {
+    const resp = await fetch(`https://api.giphy.com/v1/gifs/${gifID}?api_key=n8KtgV7bEMIp74WJ2vJjRcoZXAvQiPX5`);
+    const myJson = await resp.json();
+    const myGifoData = myJson.data;
+
+    allMyGifos.push(myGifoData);
+
+    loader.src = "https://svgur.com/i/WG0.svg";
+    textContentVideo.textContent = "GIFO subido con éxito";
+
+    const iconsContainer = document.createElement("div");
+    iconsContainer.className = "iconsContainer";
+
+    const downloadContainer = document.createElement("div");
+    downloadContainer.className = "downloadContainer";
+
+    const linkContainer = document.createElement("div");
+    linkContainer.className = "linkContainer";
+
+    textContainerVideo.appendChild(iconsContainer);
+    iconsContainer.append(downloadContainer, linkContainer);
+
+    const downloadIcon = document.createElement("img");
+    downloadIcon.src = "https://svgur.com/i/WGB.svg";
+    downloadContainer.appendChild(downloadIcon);
+
+    const linkIcon = document.createElement("img");
+    linkIcon.src = "https://svgur.com/i/WEz.svg";
+    linkContainer.appendChild(linkIcon);
+
+    linkContainer.addEventListener("click", () => {
+      linkContainer.style = "opacity: 1;";
+
+      const text = `https://giphy.com/gifs/${gifID}`;
+
+      const el = document.createElement("textarea");
+      el.value = text;
+      el.setAttribute("readonly", "");
+      el.style.position = "absolute";
+      el.style.left = "-9999px";
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      console.log("URL is already copied to the clipboard");
+    });
+
+    const downloadGif = async () => {
+      const myGif = await fetch(`https://media.giphy.com/media/${gifID}/giphy.gif`);
+      const file = await myGif.blob();
+      const urlBlob = URL.createObjectURL(file);
+      const $aTag = document.createElement("a");
+      $aTag.download = "myGif.gif";
+      $aTag.href = urlBlob;
+      $aTag.click();
+    };
+
+    downloadContainer.addEventListener("click", () => {
+      linkContainer.style = "opacity: 1;";
+
+      downloadGif();
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// -----------------------------------------esto ya está también-----------------------------
+
+const actionBtnStartRecord4 = async () => {
+  lastStepCreateGifos.className = "create-gifos__steps--highlighted";
+  secondStepCreateGifos.className = "create-gifos__steps";
+  videoContainer.appendChild(textContainerVideo);
+  videoContainer.appendChild(purpleBackground);
+  purpleBackground.style = "opacity: 0.6;background: rgb(87, 46, 229);position: absolute;z-index: 99999;width: 428px;top: 0;left: 26px;height: 100%;";
+  loader.style = "width: 22px; height: 22px; z-index: 999999; position: absolute; left: calc(50% - 15px); bottom: 50%;";
+  loader.src = "https://svgur.com/i/WFL.svg";
+  textContainerVideo.appendChild(loader);
+
+  btnStartRecord.style = "display: none;";
+  timer.style = "display: none;";
+
+  textContentVideo.style = "font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; line-height: 5px; color: #FFFFFF; z-index: 999999; position: absolute; left: calc(50% - 85px); bottom: calc(50% - 40px);";
+  textContentVideo.textContent = "Estamos subiendo tu GIFO";
+  textContainerVideo.appendChild(textContentVideo);
+
+  titleCreateGifos.style = "opacity: 0;";
+  textCreateGifos.style = "opacity: 0;";
+  btnStartRecord.removeEventListener("click", actionBtnStartRecord4);
+  await postData();
+  getMyGif();
+};
+
+const actionBtnStartRecord3 = () => {
+  btnStartRecord.textContent = "Subir Gifo";
+  timer.textContent = "Repetir captura";
+  timer.style = "border-bottom: 2px solid #5ED7C6; font-size: 13px; cursor:pointer;";
+  timePaused();
+  btnStartRecord.removeEventListener("click", actionBtnStartRecord3);
+  btnStartRecord.addEventListener("click", actionBtnStartRecord4);
+  recorder.stopRecording(() => {
+    form.append("file", recorder.getBlob(), "myGif.gif");
+    console.log(form.get("file"));
+  });
+
+  const repeatGif = () => {
+    timer.textContent = "00:00:00";
+    timer.style = "";
+    timePaused();
+    milliseconds = 0;
+    chronometer = 0;
+    btnStartRecord.removeEventListener("click", actionBtnStartRecord4);
+    timer.removeEventListener("click", repeatGif);
+    form = new FormData();
+    actionBtnStartRecord();
+  };
+  timer.addEventListener("click", repeatGif);
+};
+
+const actionBtnStartRecord2 = () => {
+  mainContainer.appendChild(timer);
+  timer.textContent = "00:00:00";
+  timer.className = "create-gifos__timer";
+  timeStart();
+  btnStartRecord.textContent = "Finalizar";
+  recorder.startRecording();
+  btnStartRecord.removeEventListener("click", actionBtnStartRecord2);
+  btnStartRecord.addEventListener("click", actionBtnStartRecord3);
+};
+
+const captureCamera = (callback) => {
+  navigator.mediaDevices
+    .getUserMedia({ video: true })
+    .then((stream) => {
+      callback(stream);
+      mainContainer.appendChild(videoContainer);
+      videoContainer.appendChild(videoRecord);
+      videoContainer.className = "create-gifos__video-container";
+      videoRecord.srcObject = stream;
+      videoRecord.autoplay = "true";
+      videoRecord.className = "create-gifos__video";
+      firstStepCreateGifos.className = "create-gifos__steps";
+      secondStepCreateGifos.className = "create-gifos__steps--highlighted";
+      btnStartRecord.removeEventListener("click", actionBtnStartRecord);
+      btnStartRecord.style = "display: block;";
+      btnStartRecord.textContent = "Grabar";
+      btnStartRecord.addEventListener("click", actionBtnStartRecord2);
+    })
+    .catch(() => {
+      alert(
+        "Necesitamos acceso para poder funcionar. Si cambias de opinión, puedes darnos acceso a tu cámara en el ícono ubicado al inicio de la barra de navegación"
+      );
+    });
+};
+
+btnStartRecord.addEventListener("click", actionBtnStartRecord);
