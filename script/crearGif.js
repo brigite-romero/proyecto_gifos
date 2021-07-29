@@ -24,9 +24,7 @@ let chronometer;
 
 const allMyGifos = [];
 
-const $header = document.querySelector(".header__container--flex");
-
-// $header.addEventListener("click", saveOnLocalStorage);
+const $header = document.querySelector(".header");
 
 const saveOnLocalStorage = () => {
   if (localStorage.getItem("myGifos")) {
@@ -43,6 +41,7 @@ const saveOnLocalStorage = () => {
   localStorage.setItem("myGifos", JSON.stringify(uniques));
 };
 
+$header.addEventListener("click", saveOnLocalStorage);
 
 function timeStart() {
   clearInterval(chronometer);
