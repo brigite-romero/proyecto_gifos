@@ -146,7 +146,6 @@
                     padding-left: 22px;
                     .gifi-link {
                       .gifi {
-                        position: relative;
                         width: 243px;
                         height: 187px;
                       }
@@ -154,7 +153,129 @@
                             width: 243px;
                             height: 187px;
                         }
-                    }
+                        .hover-img {
+                            display: none;
+                            position: relative;
+                            margin-top: -195px;
+                            background: rgba(87, 46, 229, 0.6);
+                            width: 100%;
+                            height: 100%;
+                            .subtitle {
+                                position: absolute;
+                                width: fit-content;
+                                height: fit-content;
+                                margin: 0px;
+                                padding-top: 75px;
+                                padding-left: 18px;
+                                font-family: 'Roboto', sans-serif;
+                                font-size: 15px;
+                                font-weight: 400;
+                                color: #FFFFFF;
+                            }
+                            .title-gif {
+                              position: absolute;
+                              width: fit-content;
+                              height: fit-content;
+                              margin: 0px;
+                              padding-top: 100px;
+                              padding-left: 19px;
+                              font-family: 'Roboto', sans-serif;
+                              font-size: 16px;
+                              font-weight: 700;
+                              color: #FFFFFF;
+                            }
+// ------------------------------------Aquí va lo del corazón, descarga y zoom-------------------------------------------
+                            .content-fav {
+                                display: flex;
+                                justify-content: flex-end;
+                                padding-top: 15px;
+                              // height: 32px;
+                              // display: flex;
+                              // flex-direction: column;
+                              .heart-box {
+                                height: 32px;
+                                margin-right: 10px;
+                                label {
+                                  #check {
+                                    display: none;
+                                  }
+                                  .img-heart {
+                                    width: 32px;
+                                    height: 32px;
+                                    &:hover {
+                                        display: none;
+                                      ~.img-heart-hov {
+                                        display: inline-block;
+                                      }
+                                    }
+                                  }
+                                  .img-heart-hov {
+                                    width: 32px;
+                                    height: 32px;
+                                    display: none;
+                                  }
+                                }
+                              }
+                              .down-box {
+                                height: 32px;
+                                margin-right: 10px;
+                                label {
+                                  .checkDown {
+                                    display: none;
+                                  }
+                                  .img-down {
+                                    width: 32px;
+                                    height: 32px;
+                                    &:hover {
+                                      display: none;
+                                      ~.img-down-hov {
+                                        display: inline-block;
+                                      }
+                                    }
+                                  }
+                                  .img-down-hov {
+                                    display: none;
+                                    width: 32px;
+                                    height: 32px;
+                                  }
+                                }
+                              }
+                              .zoom-box {
+                                height: 32px;
+                                margin-right: 10px;
+                                label {
+                                  #checkZoom {
+                                    display: none;
+                                  }
+                                  .img-zoom {
+                                    width: 32px;
+                                    height: 32px;
+                                    &:hover {
+                                      display: none;
+                                      ~.img-zoom-hov {
+                                        display: inline-block;
+                                      }
+                                    }
+                                  }
+                                  .img-zoom-hov {
+                                    width: 32px;
+                                    height: 32px;
+                                    display: none;
+                                  }
+                                }
+                              }
+                            }
+// ------------------------------------Aquí termina lo del corazón, descarga y zoom--------------------------------------
+                          }
+                          &:hover {
+                            .hover-img {
+                              display: block;
+                            }
+                          }
+                        }
+                        &:last-child {
+                          padding-right: 0;
+                        }
                 }
             }
         }
@@ -455,148 +576,18 @@
                             height: 275px;
                           }
                           .hover-img {
-                            display: none;
-                            position: relative;
                             margin-top: -280px;
-                            background: rgba(87, 46, 229, 0.6);
-                            width: 357px;
-                            height: 275px;
                             .subtitle {
-                              position: absolute;
-                              width: fit-content;
-                              height: fit-content;
-                              margin: 0px;
-                              padding-top: 139px;
-                              padding-left: 18px;
-                              &::before {
-                                position: relative;
-                                content: "User";
-                                font-family: 'Roboto', sans-serif;
-                                font-size: 15px;
-                                font-weight: 400;
-                                color: #FFFFFF;
-                                text-align: center;
-                              }
+                              padding-top: 135px;
                             }
                             .title-gif {
-                              position: absolute;
-                              width: fit-content;
-                              height: fit-content;
-                              margin: 0px;
-                              padding-top: 163px;
-                              padding-left: 19px;
-                              &::before {
-                                position: relative;
-                                content: "Título GIFO";
-                                font-family: 'Roboto', sans-serif;
-                                font-size: 16px;
-                                font-weight: 700;
-                                color: #FFFFFF;
-                                text-align: center;
-                              }
+                              padding-top: 170px;
                             }
 // ------------------------------------Aquí va lo del corazón, descarga y zoom-------------------------------------------
                             .content-fav {
-                              // height: 32px;
-                              // display: flex;
-                              // flex-direction: column;
-                              .heart-box {
-                                height: 32px;
-                                label {
-                                  #check {
-                                    display: none;
-                                    &:checked {
-                                      ~.img-heart {
-                                        display: none;
-                                      }
-                                      ~.bx-act {
-                                        display: inline-block;
-                                      }
-                                    }
-                                  }
-                                  .img-heart {
-                                    width: 32px;
-                                    height: 32px;
-                                    &:hover {
-                                      ~.img-heart-hov {
-                                        display: inline-block;
-                                      }
-                                    }
-                                  }
-                                  .img-heart-hov {
-                                    display: none;
-                                  }
-                                  .bx-act {
-                                    display: none;
-                                    width: 32px;
-                                    height: 32px;
-                                    border-radius: 6px;
-                                    background-color: #FFFFFF;
-                                    .img-heart-act {
-                                      padding: 8.1px 7px;
-                                      width: 18px;
-                                      height: 15.9px;
-                                    }
-                                  }
-                                }
-                              }
-                              .down-box {
-                                height: 32px;
-                                label {
-                                  #checkDown {
-                                    display: none;
-                                  }
-                                  .img-down {
-                                    width: 32px;
-                                    height: 32px;
-                                    &:hover {
-                                      display: none;
-                                      ~.img-down-hov {
-                                        display: inline-block;
-                                      }
-                                    }
-                                  }
-                                  .img-down-hov {
-                                    display: none;
-                                    width: 32px;
-                                    height: 32px;
-                                  }
-                                }
-                              }
-                              .zoom-box {
-                                height: 32px;
-                                label {
-                                  #checkZoom {
-                                    display: none;
-                                  }
-                                  .img-zoom {
-                                    width: 32px;
-                                    height: 32px;
-                                    &:hover {
-                                      display: none;
-                                      ~.img-zoom-hov {
-                                        display: inline-block;
-                                      }
-                                    }
-                                  }
-                                  .img-zoom-hov {
-                                    width: 32px;
-                                    height: 32px;
-                                    display: none;
-                                  }
-                                }
-                              }
-                            }
-// ------------------------------------Aquí termina lo del corazón, descarga y zoom--------------------------------------
-                          }
-                          &:hover {
-                            .hover-img {
-                              display: block;
+                                padding-top: 15px;
                             }
                           }
-                        }
-                        &:last-child {
-                          padding-right: 0;
                         }
                     }
                 }
