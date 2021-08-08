@@ -15,6 +15,7 @@ flechaIzquierda.addEventListener('click', () => {
 });
 
 // gifs de giphy
+let number = -1
 
 const apiKey = 'n8KtgV7bEMIp74WJ2vJjRcoZXAvQiPX5';
 const limit = 20;
@@ -70,34 +71,27 @@ async function getData (url) {
     img_heart.alt = "Heart";
     label.appendChild(img_heart);
 
-    const bx_act = document.createElement("div");
-    bx_act.className = "bx-act";
-    label.appendChild(bx_act);
-
-    const img_heart_act = document.createElement("img");
-    img_heart_act.className = "img-heart-act";
-    img_heart_act.src = "./assets/icon-fav-active.svg";
-    img_heart_act.alt = "Heart Active";
-    bx_act.appendChild(img_heart_act);
-
     const img_heart_hov = document.createElement("img");
     img_heart_hov.className = "img-heart-hov";
     img_heart_hov.src = "./assets/icon-fav-hover.svg";
-    img_heart_hov.alt = "Heart Active";
+    img_heart_hov.alt = "Heart hover";
     label.appendChild(img_heart_hov);
 
     // Aquí empieza la parte de download
 
     const down_box = document.createElement("div");
     down_box.className = "down-box";
+    down_box.id = "down_gif"
     content_fav.appendChild(down_box);
 
     const label_down = document.createElement("label");
     down_box.appendChild(label_down);
 
+    let gif_id = item.id
     const check_down = document.createElement("input");
     check_down.type = "checkbox";
-    check_down.id = "checkDown";
+    check_down.id = `${gif_id}`;
+    check_down.className ="checkDown";
     check_down.value = "down_1";
     label_down.appendChild(check_down);
 
@@ -146,14 +140,23 @@ async function getData (url) {
 
 // Aquí termina todo eso
 
+    let user = item.username;
+    if (user == ""){
+      user = "Anónimo"
+    }
+
+    let title_name = item.title;
+
     const subtitle = document.createElement("h2");
     subtitle.className = "subtitle";
+    subtitle.innerHTML = user
     hover_img.appendChild(subtitle);
 
     const title = document.createElement("h1");
     title.className = "title-gif";
+    title.innerHTML = title_name
     hover_img.appendChild(title);
-  })
-}
 
+    });
+}
 getData(path);
