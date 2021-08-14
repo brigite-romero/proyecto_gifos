@@ -1,6 +1,24 @@
 const apiKey = 'n8KtgV7bEMIp74WJ2vJjRcoZXAvQiPX5';
 
+let recorder;
+const btnStartRecord = document.querySelector("#btnStartRecord");
+const titleCreateGifos = document.querySelector(".create-gifos__main > h2");
+const textCreateGifos = document.querySelector(".create-gifos__main > p");
+const firstStepCreateGifos = document.querySelector(".create-gifos__steps");
+const mainContainer = document.querySelector(".create-gifos__main");
+const videoContainer = document.createElement("div");
+const videoRecord = document.createElement("video");
+const secondStepCreateGifos = document.querySelectorAll(".create-gifos__steps")[1];
 const timer = document.createElement("div");
+let form = new FormData();
+const lastStepCreateGifos = document.querySelectorAll(".create-gifos__steps")[2];
+const textContainerVideo = document.createElement("div");
+const textContentVideo = document.createElement("p");
+const purpleBackground = document.createElement("div");
+const loader = document.createElement("img");
+let gifID;
+
+const watch = timer;
 let milliseconds = 0;
 let chronometer;
 
@@ -8,7 +26,7 @@ const allMyGifos = [];
 
 const $header = document.querySelector(".header");
 
-const saveLocal = () => {
+const saveOnLocalStorage = () => {
   if (localStorage.getItem("myGifos")) {
     const alreadySavedItems = JSON.parse(localStorage.getItem("myGifos"));
 
@@ -23,9 +41,7 @@ const saveLocal = () => {
   localStorage.setItem("myGifos", JSON.stringify(uniques));
 };
 
-$header.addEventListener("click", saveLocal);
-
-const watch = timer;
+$header.addEventListener("click", saveOnLocalStorage);
 
 function timeStart() {
   clearInterval(chronometer);
@@ -43,12 +59,6 @@ function timeStart() {
 function timePaused() {
   clearInterval(chronometer);
 }
-
-let recorder;
-const btnStartRecord = document.querySelector("#btnStartRecord");
-const titleCreateGifos = document.querySelector(".create-gifos__main > h2");
-const textCreateGifos = document.querySelector(".create-gifos__main > p");
-const firstStepCreateGifos = document.querySelector(".create-gifos__steps");
 
 const actionBtnStartRecord = () => {
   captureCamera((stream) => {
@@ -69,9 +79,6 @@ const actionBtnStartRecord = () => {
   firstStepCreateGifos.className = "create-gifos__steps--highlighted ";
 };
 
-let form = new FormData();
-let gifID;
-
 async function postData() {
   try {
     const res = await fetch("https://upload.giphy.com/v1/gifs?api_key=n8KtgV7bEMIp74WJ2vJjRcoZXAvQiPX5", {
@@ -86,10 +93,7 @@ async function postData() {
   }
 }
 
-const textContainerVideo = document.createElement("div");
-const textContentVideo = document.createElement("p");
-const loader = document.createElement("img");
-
+// -----------------------------------------esto ya está también-----------------------------
 
 async function getMyGif() {
   try {
@@ -159,10 +163,7 @@ async function getMyGif() {
   }
 }
 
-const videoContainer = document.createElement("div");
-const secondStepCreateGifos = document.querySelectorAll(".create-gifos__steps")[1];
-const lastStepCreateGifos = document.querySelectorAll(".create-gifos__steps")[2];
-const purpleBackground = document.createElement("div");
+// -----------------------------------------esto ya está también-----------------------------
 
 const actionBtnStartRecord4 = async () => {
   lastStepCreateGifos.className = "create-gifos__steps--highlighted";
@@ -214,8 +215,6 @@ const actionBtnStartRecord3 = () => {
   timer.addEventListener("click", repeatGif);
 };
 
-const mainContainer = document.querySelector(".create-gifos__main");
-
 const actionBtnStartRecord2 = () => {
   mainContainer.appendChild(timer);
   timer.textContent = "00:00:00";
@@ -226,8 +225,6 @@ const actionBtnStartRecord2 = () => {
   btnStartRecord.removeEventListener("click", actionBtnStartRecord2);
   btnStartRecord.addEventListener("click", actionBtnStartRecord3);
 };
-
-const videoRecord = document.createElement("video");
 
 const captureCamera = (callback) => {
   navigator.mediaDevices

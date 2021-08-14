@@ -11,7 +11,7 @@
 </head>
 <body  id="body">
     <div class="line-purple"></div>
-    <header class="header" id="header">
+    <header class="header">
       <a href="./index.html" class="logo">
           <img class="logo-mobile diu" src="./assets/logo-mobile.svg" alt="logo">
           <img class="logo-desktop diu" src="./assets/logo-desktop.svg" alt="logo">
@@ -52,26 +52,82 @@
       </div>
   </header>
 
-  <section class="MisGifos">
-    <img
-      class="MisGifos__icon"
-      src="./assets/icon-face.svg"
-      alt="Cara pixelada verde"
-    />
-    <h2 class="MisGifos__h2">Mis GIFOS</h2>
-    <div class="MisGifos__father"></div>
-  </section>
+    <section class="misGifos">
+        <div class="titulo-mg">
+            <img class="img-mg" src="./assets/icon-mis-gifos.svg" alt="mis gifos">
+            <p class="titulo">Mis GIFOS</p>
+        </div>
+        <div class="noGifos">
+            <img src="./assets/icon-mis-gifos-sin-contenido.svg" alt="sin gifos">
+            <p class="text-mg">¡Anímate a crear tu primer GIFO!</p>
+        </div>
+        <div class="gifosGuardados">
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div><div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+          <div class="gif">
+            <a href="#" id="gifi-link" class="gifi-link"><div class="gifi"></div></a> <!-- Reemplazar el div dentro del anchor por el gif -->
+          </div>
+        </div>
+        <button role="button" id="ver-nas" class="ver-mas">
+          <img class="vermas-img pre diu" src="./assets/CTA-ver-mas.svg" alt="ver-mas">
+          <img class="vermas-img hover diu" src="./assets/CTA-ver-mas-hover.svg" alt="ver-mas">
+          <img class="vermas-img pre noc" src="./assets/CTA-ver+-modo-noc.svg" alt="ver-mas">
+          <img class="vermas-img hover noc" src="./assets/CTA-ver+hover-modo-noc.svg" alt="ver-mas">
+      </button>
+    </section>
 
-    <section class="slider">
-      <h2 class="slider__h2">Trending GIFOS</h2>
-      <p class="slider__subtitle">Mira los últimos GIFOS de nuestra comunidad.</p>
-      <div class="slider__container">
-        <div class="slider__arrow">
-          <span class="arrow-left"></span>
+    <section class="trending">
+      <div class="text">
+        <div class="title">Trending GIFOS</div>
+        <div class="sub">Mira los últimos <br> GIFOS de nuestra comunidad.</div>
+      </div>
+      <div class="gifos-car">
+        <button role="button" id="left-arrow" class="left-arrow arrows">
+            <img class="arrow diu" src="./assets/button-slider-left.svg" alt="button left">
+            <img class="arrow-hover diu" src="./assets/Button-Slider-left-hover.svg" alt="button left">
+            <img class="arrow noc" src="./assets/button-slider-left-md-noct.svg" alt="button left">
+            <img class="arrow-hover noc" src="./assets/button-slider-left-md-noct.svg" alt="button left">
+        </button>
+        <div class="content-car">
+          <div class="carousel">
+          </div>
         </div>
-        <div class="slider__arrow">
-          <span class="arrow-right"></span>
-        </div>
+        <button role="button" id="right-arrow" class="right-arrow arrows">
+            <img class="arrow diu" src="./assets/Button-Slider-right.svg" alt="button right">
+            <img class="arrow-hover diu" src="./assets/Button-Slider-right-hover.svg" alt="button right">
+            <img class="arrow noc" src="./assets/button-slider-right-md-noct.svg" alt="button right">
+            <img class="arrow-hover noc" src="./assets/button-slider-right-md-noct.svg" alt="button right">
+          </button>
       </div>
     </section>
 
@@ -96,7 +152,6 @@
         <div class="line-bottom"></div>
     </footer>
 
-    <script src="./script/myGifos.js"></script>
     <script src="./script/trending.js"></script>
     <script src="./script/modonocturno.js"></script>
 </body>
