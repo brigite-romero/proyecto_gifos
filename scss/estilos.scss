@@ -105,36 +105,66 @@
         } 
     }
 }
-.trending {
-    background: $color-marfil;
-    width: 100%;
-    height: auto;
-    padding-bottom: 82px;
-    .text {
-      padding-top: 46px;
-      .title {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 20px;
-        color: $color-morado;
-        text-align: center;
-        line-height: 30px;
-        margin-bottom: 7px;
-      }
-      .sub {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-        color: $color-negro;
-        text-align: center;
-        line-height: 23px;
-        padding-bottom: 32px;
-      }
-    }
-    .gifos-car {
-      display: flex;
-      align-items: center;
+// .trending {
+//     background: $color-marfil;
+//     width: 100%;
+//     height: auto;
+//     padding-bottom: 82px;
+//     .text {
+//       padding-top: 46px;
+//       .title {
+//         font-family: 'Montserrat', sans-serif;
+//         font-weight: 700;
+//         font-size: 20px;
+//         color: $color-morado;
+//         text-align: center;
+//         line-height: 30px;
+//         margin-bottom: 7px;
+//       }
+//       .sub {
+//         font-family: 'Roboto', sans-serif;
+//         font-weight: 400;
+//         font-size: 16px;
+//         color: $color-negro;
+//         text-align: center;
+//         line-height: 23px;
+//         padding-bottom: 32px;
+//       }
+//     }
+//     .gifos-car {
+//       display: flex;
+//       align-items: center;
       
+
+//         .content-car {
+//             overflow: scroll;
+//             scroll-behavior: smooth;
+//             width: 100%;
+//             .carousel {
+//             display: flex;
+//             flex-wrap: nowrap;
+//                 .gif {
+//                     padding-left: 22px;
+//                     .gifi-link {
+//                       .gifi {
+//                         position: relative;
+//                         width: 243px;
+//                         height: 187px;
+//                       }
+//                         .gifi {
+//                             width: 243px;
+//                             height: 187px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         .arrows {
+//             display: none;
+//         }
+//     }
+// }
+
         .content-car {
             overflow: scroll;
             scroll-behavior: smooth;
@@ -284,6 +314,7 @@
         }
     }
 }
+
 .share {
     width: 100%;
     height: auto;
@@ -395,15 +426,15 @@
             } 
         }
     }
-    .trending {
-        background: $color-gris-oscuro;
-        .title {
-            color: $color-blanco;
-        }
-        .sub {
-            color: $color-blanco;
-        }
-    }
+    // .trending {
+    //     background: $color-gris-oscuro;
+    //     .title {
+    //         color: $color-blanco;
+    //     }
+    //     .sub {
+    //         color: $color-blanco;
+    //     }
+    // }
     .share {
         .text-footer {
             .compartir {
@@ -546,6 +577,211 @@
             }
         }
     }
+
+//     .trending {
+//         padding-bottom: 182px;
+//         .text {
+//             padding-top: 67px;
+//             .title {
+//                 font-size: 25px;
+//                 margin-bottom: 12px;
+//             }
+//             .sub {
+//                 font-size: 18px;
+//                 padding-bottom: 53px;
+//                 br {
+//                    display: none;
+//                 }
+//             }
+//         }
+//         .gifos-car {
+//             padding-left: 60px;
+//             padding-right: 60px;
+//             .content-car {
+//                 .carousel {
+//                     .gif {
+//                         padding-left: 0;
+//                         padding-right: 27px;
+//                         .gifi-link {
+//                           .gifi {
+//                             width: 357px;
+//                             height: 275px;
+//                           }
+//                           .hover-img {
+//                             display: none;
+//                             position: relative;
+//                             margin-top: -280px;
+//                             background: rgba(87, 46, 229, 0.6);
+//                             width: 357px;
+//                             height: 275px;
+//                             .subtitle {
+//                               position: absolute;
+//                               width: fit-content;
+//                               height: fit-content;
+//                               margin: 0px;
+//                               padding-top: 139px;
+//                               padding-left: 18px;
+//                               &::before {
+//                                 position: relative;
+//                                 content: "User";
+//                                 font-family: 'Roboto', sans-serif;
+//                                 font-size: 15px;
+//                                 font-weight: 400;
+//                                 color: #FFFFFF;
+//                                 text-align: center;
+//                               }
+//                             }
+//                             .title-gif {
+//                               position: absolute;
+//                               width: fit-content;
+//                               height: fit-content;
+//                               margin: 0px;
+//                               padding-top: 163px;
+//                               padding-left: 19px;
+//                               &::before {
+//                                 position: relative;
+//                                 content: "Título GIFO";
+//                                 font-family: 'Roboto', sans-serif;
+//                                 font-size: 16px;
+//                                 font-weight: 700;
+//                                 color: #FFFFFF;
+//                                 text-align: center;
+//                               }
+//                             }
+// // ------------------------------------Aquí va lo del corazón, descarga y zoom-------------------------------------------
+//                             .content-fav {
+//                               // height: 32px;
+//                               // display: flex;
+//                               // flex-direction: column;
+//                               .heart-box {
+//                                 height: 32px;
+//                                 label {
+//                                   #check {
+//                                     display: none;
+//                                     &:checked {
+//                                       ~.img-heart {
+//                                         display: none;
+//                                       }
+//                                       ~.bx-act {
+//                                         display: inline-block;
+//                                       }
+//                                     }
+//                                   }
+//                                   .img-heart {
+//                                     width: 32px;
+//                                     height: 32px;
+//                                     &:hover {
+//                                       ~.img-heart-hov {
+//                                         display: inline-block;
+//                                       }
+//                                     }
+//                                   }
+//                                   .img-heart-hov {
+//                                     display: none;
+//                                   }
+//                                   .bx-act {
+//                                     display: none;
+//                                     width: 32px;
+//                                     height: 32px;
+//                                     border-radius: 6px;
+//                                     background-color: #FFFFFF;
+//                                     .img-heart-act {
+//                                       padding: 8.1px 7px;
+//                                       width: 18px;
+//                                       height: 15.9px;
+//                                     }
+//                                   }
+//                                 }
+//                               }
+//                               .down-box {
+//                                 height: 32px;
+//                                 label {
+//                                   #checkDown {
+//                                     display: none;
+//                                   }
+//                                   .img-down {
+//                                     width: 32px;
+//                                     height: 32px;
+//                                     &:hover {
+//                                       display: none;
+//                                       ~.img-down-hov {
+//                                         display: inline-block;
+//                                       }
+//                                     }
+//                                   }
+//                                   .img-down-hov {
+//                                     display: none;
+//                                     width: 32px;
+//                                     height: 32px;
+//                                   }
+//                                 }
+//                               }
+//                               .zoom-box {
+//                                 height: 32px;
+//                                 label {
+//                                   #checkZoom {
+//                                     display: none;
+//                                   }
+//                                   .img-zoom {
+//                                     width: 32px;
+//                                     height: 32px;
+//                                     &:hover {
+//                                       display: none;
+//                                       ~.img-zoom-hov {
+//                                         display: inline-block;
+//                                       }
+//                                     }
+//                                   }
+//                                   .img-zoom-hov {
+//                                     width: 32px;
+//                                     height: 32px;
+//                                     display: none;
+//                                   }
+//                                 }
+//                               }
+//                             }
+// // ------------------------------------Aquí termina lo del corazón, descarga y zoom--------------------------------------
+//                           }
+//                           &:hover {
+//                             .hover-img {
+//                               display: block;
+//                             }
+//                           }
+//                         }
+//                         &:last-child {
+//                           padding-right: 0;
+//                         }
+//                     }
+//                 }
+//             }
+//             .arrows {
+//             display: block;
+//             background: $color-marfil;
+//             border: $color-marfil;
+//             transition: .2s ease all;
+//             outline: none;
+//             padding: 0 22px;
+//                 .arrow-hover{
+//                     display: none;
+//                 }
+//                 .noc{
+//                     display: none;
+//                 }
+//                 &:hover{
+//                     .arrow-hover{
+//                         display: block;
+//                     }
+//                     .arrow{
+//                         display: none;
+//                     }
+//                     .noc{
+//                         display: none;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
     .trending {
         padding-bottom: 182px;
         .text {
@@ -619,6 +855,7 @@
             }
         }
     }
+
     .share {
         .text-footer {
             display: flex;
@@ -718,36 +955,36 @@
                 }
             }
         }
-        .trending {
-            .gifos-car {
-                .arrows {
-                    background: $color-gris-oscuro;
-                    border: $color-gris-oscuro;
-                        .noc{
-                            display: block;
-                        }
-                        .arrow-hover{
-                            display: none;
-                        }
-                        .diu{
-                            display: none;
-                        }
-                        &:hover{
-                            .arrow-hover{
-                                display: block;
-                            }
-                            .arrow{
-                                display: none;
-                            }
-                            .diu{
-                                display: none;
-                            }
-                            .noc{
-                                background: $color-blanco;
-                            }
-                        }
-                    }
-            }
-        }
+        // .trending {
+        //     .gifos-car {
+        //         .arrows {
+        //             background: $color-gris-oscuro;
+        //             border: $color-gris-oscuro;
+        //                 .noc{
+        //                     display: block;
+        //                 }
+        //                 .arrow-hover{
+        //                     display: none;
+        //                 }
+        //                 .diu{
+        //                     display: none;
+        //                 }
+        //                 &:hover{
+        //                     .arrow-hover{
+        //                         display: block;
+        //                     }
+        //                     .arrow{
+        //                         display: none;
+        //                     }
+        //                     .diu{
+        //                         display: none;
+        //                     }
+        //                     .noc{
+        //                         background: $color-blanco;
+        //                     }
+        //                 }
+        //             }
+        //     }
+        // }
     }
 }

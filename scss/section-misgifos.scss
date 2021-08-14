@@ -1,158 +1,256 @@
-.misGifos{
-    padding: 5px 0 78px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    .titulo-mg{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        .titulo{
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 20px;
-            color: $color-morado;
-            text-align: center;
-            line-height: 30px;
-            margin: 7px 0 46px 0;
-        }
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 
-    .noGifos{
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+$purple: #572EE5;
+$blue: #50E3C2;
+$place-holder: #9CAFC3;
+$white: #FFF;
+$black: #000;
+$gray-icons: #CDD6E0;
+$dark-gray: #37383C;
+$light-black: #222326;
+
+.MisGifos {
+  padding-top: 100px;
+  text-align: center;
+  .MisGifos__icon {
+    margin-top: 10px;
+    width: 23px;
+    height: 21px;
+  }
+  .MisGifos__h2 {
+    margin-bottom: 45px;
+    color: $purple;
+    font-size: 25px;
+    line-height: 30px;
+
+    body.dark &{
+      color: $white;
+    }
+  }
+  .MisGifos__father {
+    width: 82.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+
+    .MisGifos__item {
+      max-width: 156px;
+      width: 45%;
+      height: 120px;
+      margin-bottom: 21px;
+      position: relative;
+
+      overflow: hidden;
+
+      .MisGifos__img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+      .MisGifos__hover {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background: #572ee5;
+        opacity: 0.7;
+
+        display: none;
+      }
+      .MisGifos__icons {
+        width: 100%;
+
+        position: absolute;
+        top: 10px;
+
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 21px;
+        justify-content: flex-end;
+
+        .MisGifos__icon-container {
+          width: 32px;
+          height: 32px;
+
+          margin-right: 5px;
+
+          display: none;
+          justify-content: center;
+          align-items: center;
+
+          opacity: 0.7;
+          background: white;
+
+          border-radius: 6px;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          .MisGifos__icon--first,
+          .MisGifos__icon--second,
+          .MisGifos__icon--last {
+            width: 18px;
+            height: 15.9px;
+
+            display: block;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+
+          .MisGifos__icon--first {
+            background-image: url("../assets/icon-delete.svg");
+          }
+
+          .MisGifos__icon--second {
+            background-image: url("../assets/icon-download-v2.svg");
+          }
+
+          .MisGifos__icon--last {
+            background-image: url("../assets/icon-max.svg");
+          }
+        }
+      }
+      .MisGifos__text {
+
         display: none;
 
-        .text-mg{
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 17px;
-            color: $color-aguamarina;
-            text-align: center;
-            line-height: 33px;
-            margin: 10px 0 0 0;
+        position: absolute;
+        top: 70px;
+        right: 30px;
+
+        .MisGifos__p {
+          margin-left: -44px;
+          margin-bottom: 5px;
+
+          color: white;
+          font-family: "Roboto", sans-serif;
+          font-size: 15px;
         }
+        .MisGifos__title {
+          margin-left: 13px;
+
+          color: white;
+          font-family: "Roboto", sans-serif;
+          font-size: 15px;
+        }
+      }
+
+      &:hover {
+        .MisGifos__text {
+          display: block;
+        }
+
+        .MisGifos__icon-container {
+          display: flex;
+        }
+
+        .MisGifos__hover {
+          display: block;
+        }
+      }
+    }
+  }
+  .MisGifos__button {
+    margin: 80px 0;
+    width: 130px;
+    height: 50px;
+    background: none;
+    border: 1px solid $purple;
+    border-radius: 25px;
+    color: $purple;
+
+    a{
+      text-decoration: none;
     }
 
-    .gifosGuardados{
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0 21px;
-        justify-content: space-between;
-
-        .gif{
-            background: $color-aguamarina;
-            width: 156px;
-            height: 120px;
-            margin-bottom: 21px;
-        }
+    &:hover a{
+      color: $white;
     }
 
-    .ver-mas{
-        background: $color-blanco;
-        border: $color-blanco;
-        transition: .2s ease all;
-        outline: none;
-        padding: 57px 0 0 0;
-        .noc{
-            display: none;
-        }
-        .hover{
-            display: none;
-        }
-        &:hover{
-            .hover {
-                display: block;
-            }
-            .pre{
-                display: none;
-            }
-            .noc{
-                display: none;
-            }
-        }
+    &:hover {
+      background: $purple;
+      color: $white;
     }
+
+    body.dark & {
+      background: transparent;
+      color: $white;
+      border: 1px solid $white;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
 }
-.darkmode{
-    .misGifos{
-        .titulo-mg{
-            .titulo{
-                color: $color-blanco;
-            }
-        }
-    
-        .noGifos{
-            .text-mg{
-                color: $color-aguamarina;
-            }
-        }
-    
-        .gifosGuardados{
-    
-            .gif{
-                background: $color-aguamarina;
-            }
-        }
-    
-        .ver-mas{
-            background: $color-fondo;
-            border: $color-fondo;
-            .noc{
-                display: block;
-            }
-            .diu{
-                display: none;
-            }
-            .hover{
-                display: none;
-            }
-            &:hover{
-                .hover {
-                    display: block;
-                }
-                .pre{
-                    display: none;
-                }
-                .diu{
-                    display: none;
-                }
-            }
-        }
-    }    
-}
-@media (min-width: 1440px){
-    .misGifos{
-        padding: 106px 0 95px 0;
-        
-        .titulo-mg{
-            .titulo{
-                font-size: 25px;
-                margin: 8px 0 36px 0;
-            }
-        }
-    
-        .noGifos{
-            max-width: 431px;
-            padding: 74px 0 0 0;
-    
-            .text-mg{
-                font-size: 22px;
-                margin: 24px 0 0 0;
-            }
-        }
-        .gifosGuardados{
-            padding: 0 157px;
-    
-            .gif{
-                width: 260px;
-                height: 200px;
-                margin-bottom: 35px;
-            }
-        }
+
+@media screen and (min-width: 1024px) {
+  .MisGifos {
+    .MisGifos__h2 {
+      font-size: 25px;
     }
+    .MisGifos__father {
+      .MisGifos__item {
+        max-width: 260px;
+        height: 200px;
+        .MisGifos__img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        .MisGifos__hover {
+          width: 100%;
+          height: 100%;
+          .MisGifos__hover-icon {
+            margin-top: 10px;
+            height: 32px;
+            img {
+              margin-right: 10px;
+              padding: 5px;
+              border-radius: 5px;
+            }
+          }
+        }
+        .MisGifos__text {
+          top: 120px;
+          right: 90px;
+          .MisGifos__p {
+            margin-right: 75px;
+            font-size: 15px;
+            line-height: 18px;
+          }
+          .MisGifos__title {
+            font-weight: bold;
+            margin-left: -115px;
+            font-size: 16px;
+            line-height: 19px;
+          }
+        }
+      }
+    }
+  }
 }

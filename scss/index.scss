@@ -9,6 +9,7 @@ body {
 .darkmode {
     background: $color-fondo;
 }
+@import './trending.scss';
 @import './estilos.scss';
 @import './banner.scss';
 @import './section-favoritos.scss';
