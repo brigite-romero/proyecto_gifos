@@ -503,6 +503,172 @@ body.dark .slider .slider__subtitle {
   display: none;
 }
 
+
+.trending {
+  background: #F3F5F8;
+  width: 100%;
+  height: auto;
+  padding-bottom: 82px;
+}
+.trending .text {
+  padding-top: 46px;
+}
+.trending .text .title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 7px;
+}
+.trending .text .sub {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  line-height: 23px;
+  padding-bottom: 32px;
+}
+.trending .gifos-car {
+  display: flex;
+  align-items: center;
+}
+.trending .gifos-car .content-car {
+  overflow: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+.trending .gifos-car .content-car .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.trending .gifos-car .content-car .carousel .gif {
+  padding-left: 22px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
+  width: 243px;
+  height: 187px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
+  width: 243px;
+  height: 187px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img {
+  display: none;
+  position: relative;
+  margin-top: -195px;
+  background: rgba(87, 46, 229, 0.6);
+  width: 100%;
+  height: 100%;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .subtitle {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  margin: 0px;
+  padding-top: 75px;
+  padding-left: 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .title-gif {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  margin: 0px;
+  padding-top: 100px;
+  padding-left: 19px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 15px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box {
+  height: 32px;
+  margin-right: 10px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label #check {
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .img-heart {
+  width: 32px;
+  height: 32px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .img-heart:hover {
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .img-heart:hover ~ .img-heart-hov {
+  display: inline-block;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .heart-box label .img-heart-hov {
+  width: 32px;
+  height: 32px;
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box {
+  height: 32px;
+  margin-right: 10px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .checkDown {
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down {
+  width: 32px;
+  height: 32px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down:hover {
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down:hover ~ .img-down-hov {
+  display: inline-block;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .down-box label .img-down-hov {
+  display: none;
+  width: 32px;
+  height: 32px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box {
+  height: 32px;
+  margin-right: 10px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label #checkZoom {
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom {
+  width: 32px;
+  height: 32px;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom:hover {
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom:hover ~ .img-zoom-hov {
+  display: inline-block;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav .zoom-box label .img-zoom-hov {
+  width: 32px;
+  height: 32px;
+  display: none;
+}
+.trending .gifos-car .content-car .carousel .gif .gifi-link:hover .hover-img {
+  display: block;
+}
+.trending .gifos-car .content-car .carousel .gif:last-child {
+  padding-right: 0;
+}
+.trending .gifos-car .arrows {
+  display: none;
+}
+
+
 .share {
   width: 100%;
   height: auto;
@@ -709,6 +875,73 @@ body.dark .slider .slider__subtitle {
   .header .menu-container .menu .more:hover .noc {
     display: none;
   }
+
+
+  .trending {
+    padding-bottom: 182px;
+  }
+  .trending .text {
+    padding-top: 67px;
+  }
+  .trending .text .title {
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+  .trending .text .sub {
+    font-size: 18px;
+    padding-bottom: 53px;
+  }
+  .trending .text .sub br {
+    display: none;
+  }
+  .trending .gifos-car {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .trending .gifos-car .content-car .carousel .gif {
+    padding-left: 0;
+    padding-right: 27px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .gifi {
+    width: 357px;
+    height: 275px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img {
+    margin-top: -280px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .subtitle {
+    padding-top: 135px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .title-gif {
+    padding-top: 170px;
+  }
+  .trending .gifos-car .content-car .carousel .gif .gifi-link .hover-img .content-fav {
+    padding-top: 15px;
+  }
+  .trending .gifos-car .arrows {
+    display: block;
+    background: #F3F5F8;
+    border: #F3F5F8;
+    transition: 0.2s ease all;
+    outline: none;
+    padding: 0 22px;
+  }
+  .trending .gifos-car .arrows .arrow-hover {
+    display: none;
+  }
+  .trending .gifos-car .arrows .noc {
+    display: none;
+  }
+  .trending .gifos-car .arrows:hover .arrow-hover {
+    display: block;
+  }
+  .trending .gifos-car .arrows:hover .arrow {
+    display: none;
+  }
+  .trending .gifos-car .arrows:hover .noc {
+    display: none;
+  }
+
 
   .share .text-footer {
     display: flex;
@@ -973,6 +1206,116 @@ body.dark .slider .slider__subtitle {
   width: 100%;
   height: 100%;
 }
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img {
+  display: none;
+  position: relative;
+  margin-top: -124px;
+  background: rgba(87, 46, 229, 0.6);
+  width: 100%;
+  height: 100%;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .subtitle {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  margin: 0px;
+  padding-top: 23px;
+  padding-left: 18px;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .title-gif {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  margin: 0px;
+  padding-top: 40px;
+  padding-left: 19px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-align: initial;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 15px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .heart-box {
+  height: 32px;
+  margin-right: 10px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .heart-box label #check {
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .heart-box label .img-heart {
+  width: 32px;
+  height: 32px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .heart-box label .img-heart:hover {
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .heart-box label .img-heart:hover ~ .img-heart-hov {
+  display: inline-block;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .heart-box label .img-heart-hov {
+  width: 32px;
+  height: 32px;
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .down-box {
+  height: 32px;
+  margin-right: 10px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .down-box label .checkDown {
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .down-box label .img-down {
+  width: 32px;
+  height: 32px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .down-box label .img-down:hover {
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .down-box label .img-down:hover ~ .img-down-hov {
+  display: inline-block;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .down-box label .img-down-hov {
+  display: none;
+  width: 32px;
+  height: 32px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .zoom-box {
+  height: 32px;
+  margin-right: 10px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .zoom-box label #checkZoom {
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .zoom-box label .img-zoom {
+  width: 32px;
+  height: 32px;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .zoom-box label .img-zoom:hover {
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .zoom-box label .img-zoom:hover ~ .img-zoom-hov {
+  display: inline-block;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .content-fav .zoom-box label .img-zoom-hov {
+  width: 32px;
+  height: 32px;
+  display: none;
+}
+.banner .resultados .cont-result .resultadosObtenidos .gif:hover .hover-img {
+  display: block;
+}
+.banner .resultados .cont-result .resultadosObtenidos:last-child {
+  padding-right: 0;
+}
 .banner .resultados .ver-mas {
   background: white;
   border: white;
@@ -1119,6 +1462,17 @@ body.dark .slider .slider__subtitle {
     width: 260px;
     height: 200px;
     margin: 0 30px 35px 0;
+  }
+  .banner .resultados .cont-result .resultadosObtenidos .gif .hover-img {
+    margin-top: -204px;
+  }
+  .banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .subtitle {
+    padding-top: 85px;
+    font-size: 15px;
+  }
+  .banner .resultados .cont-result .resultadosObtenidos .gif .hover-img .title-gif {
+    padding-top: 110px;
+    font-size: 16px;
   }
 }
 .favoritos {
